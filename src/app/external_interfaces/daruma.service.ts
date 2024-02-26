@@ -90,6 +90,8 @@ export class DarumaService {
   }
 
   save(model: DarumaModel): Observable<DarumaModel> {
+    if (model.id) return this.update(model);
+
     // const headers = {};
     // return this.http
     //   .post<DarumaModel>(`${BASE_URL}/daruma`, {

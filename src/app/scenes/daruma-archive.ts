@@ -17,7 +17,9 @@ export class DarumaArchive extends DarumaList {
     //FIXME using services statically is very hacky
     //TODO add spinner?
     DarumaService.instance.getList(1).subscribe((data) => {
-      this.archivedDarumas = [...data];
+      this.archivedDarumas = [
+        ...data.filter((daruma) => daruma.leftEye && daruma.rightEye),
+      ];
       this.updateRenderedDarumas();
     });
   }
