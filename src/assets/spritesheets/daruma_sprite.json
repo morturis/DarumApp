@@ -1,0 +1,225 @@
+{
+  "frames": [
+    {
+      "filename": "body_empty_full_line.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_belly.png",
+      "frame": {
+        "x": 247,
+        "y": 1,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_body_0x0004df.png",
+      "frame": {
+        "x": 493,
+        "y": 1,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_body_0xdf0000.png",
+      "frame": {
+        "x": 1,
+        "y": 250,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_body_0xempty_dotted.png",
+      "frame": {
+        "x": 247,
+        "y": 250,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_face.png",
+      "frame": {
+        "x": 493,
+        "y": 250,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_left_eye_empty.png",
+      "frame": {
+        "x": 1,
+        "y": 499,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_left_eye_full.png",
+      "frame": {
+        "x": 247,
+        "y": 499,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_right_eye_empty.png",
+      "frame": {
+        "x": 493,
+        "y": 499,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_right_eye_full.png",
+      "frame": {
+        "x": 739,
+        "y": 1,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "spritesheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 984,
+      "h": 747
+    },
+    "scale": "1"
+  }
+}
