@@ -5,6 +5,7 @@ import { DarumaArchive } from '../scenes/daruma-archive';
 import { DarumaEditingView } from '../scenes/daruma-editing-view';
 import { DarumaLibrary } from '../scenes/daruma-library';
 import { MainScene } from '../scenes/main-scene';
+import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,13 @@ export class HomePage implements OnInit {
       type: Phaser.AUTO,
       height: window.innerHeight,
       width: window.innerWidth,
-      scene: [MainScene, DarumaArchive, DarumaLibrary, DarumaEditingView],
+      scene: [
+        MainScene,
+        DarumaArchive,
+        DarumaLibrary,
+        DarumaEditingView,
+        DarumaEyePainting,
+      ],
       parent: 'gameContainer',
       autoCenter: Phaser.Scale.CENTER_BOTH,
       physics: {

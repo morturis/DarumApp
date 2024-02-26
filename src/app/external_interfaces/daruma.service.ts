@@ -20,42 +20,42 @@ export class DarumaService {
       leftEye: true,
       rightEye: true,
       bodyColor: DarumaBodyColor.BLUE,
-      goals: 'aaa',
+      goals: 'Que me crezca un nuevo brazo',
     },
     {
       id: 2,
       leftEye: true,
       rightEye: true,
       bodyColor: DarumaBodyColor.RED,
-      goals: 'aaa',
+      goals: 'Ganar la loteria',
     },
     {
       id: 3,
       leftEye: true,
       rightEye: true,
       bodyColor: DarumaBodyColor.BLUE,
-      goals: 'aaa',
+      goals: ':D',
     },
     {
       id: 4,
       leftEye: false,
       rightEye: true,
       bodyColor: DarumaBodyColor.RED,
-      goals: 'aaa',
+      goals: 'Que me parta un rayo',
     },
     {
       id: 5,
       leftEye: true,
       rightEye: false,
       bodyColor: DarumaBodyColor.BLUE,
-      goals: 'aaa',
+      goals: 'D:',
     },
     {
       id: 6,
       leftEye: false,
       rightEye: false,
       bodyColor: DarumaBodyColor.BLUE,
-      goals: 'aaa',
+      goals: 'Ni idea bro esto es solo para dev',
     },
   ];
 
@@ -72,7 +72,7 @@ export class DarumaService {
     //   .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     const singleDaruma = DarumaService.devValues.find(
-      (daruma) => daruma.id === id
+      (daruma) => daruma.id === id,
     );
     if (!singleDaruma) throw new Error('404');
     return of(singleDaruma).pipe(delay(1000));
@@ -109,7 +109,7 @@ export class DarumaService {
     //   .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     const index = DarumaService.devValues.findIndex(
-      (daruma) => daruma.id === model.id
+      (daruma) => daruma.id === model.id,
     );
     if (!index) throw new Error('404');
     DarumaService.devValues[index] = model;
@@ -125,7 +125,7 @@ export class DarumaService {
 
     //Keeps all except for the deleted element
     DarumaService.devValues = DarumaService.devValues.filter(
-      (daruma) => daruma.id !== model.id
+      (daruma) => daruma.id !== model.id,
     );
     return of(model).pipe(delay(1000));
   }
