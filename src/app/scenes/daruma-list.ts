@@ -45,7 +45,7 @@ export class DarumaList extends Phaser.Scene {
       render.setBodyCallback(() => {
         this.registry.set(RegistryKeys.PREVIOUS_SCENE, this.scene.key);
         this.registry.set(RegistryKeys.EDITED_DARUMA, model);
-        this.scene.switch(SceneKeys.DARUMA_EDITING);
+        this.scene.switch(SceneKeys.DARUMA_EYE_PAINTING);
       });
       this.renderedDarumas.push(render);
       this.add.existing(render);
