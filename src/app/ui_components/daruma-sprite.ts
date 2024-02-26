@@ -34,7 +34,7 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_sprite',
-      `daruma_body_${bodyColor}.png`
+      `daruma_body_${bodyColor}.png`,
     );
     if (this.bodyCallback) this.setBodyCallback(this.bodyCallback);
     this.faceBackground = new Phaser.GameObjects.Image(
@@ -42,7 +42,7 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_sprite',
-      'daruma_face.png'
+      'daruma_face.png',
     );
 
     this.leftEye = new Phaser.GameObjects.Image(
@@ -50,7 +50,7 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_sprite',
-      `daruma_left_eye_${leftEyeStatus}.png`
+      `daruma_left_eye_${leftEyeStatus}.png`,
     );
     if (this.leftEyeCallback) this.setLeftEyeCallback(this.leftEyeCallback);
     this.rightEye = new Phaser.GameObjects.Image(
@@ -58,7 +58,7 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_sprite',
-      `daruma_right_eye_${rightEyeStatus}.png`
+      `daruma_right_eye_${rightEyeStatus}.png`,
     );
     if (this.rightEyeCallback) this.setRightEyeCallback(this.rightEyeCallback);
     this.belly = new Phaser.GameObjects.Image(
@@ -66,7 +66,7 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_sprite',
-      'daruma_belly.png'
+      'daruma_belly.png',
     );
     if (this.bellyCallback) this.setBellyCallback(this.bellyCallback);
 

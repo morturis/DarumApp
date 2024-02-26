@@ -75,7 +75,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this.luckButton,
       this.renderedDaruma,
       -this.CANVAS_WIDTH * 0.25,
-      -this.CANVAS_HEIGHT * 0.3
+      -this.CANVAS_HEIGHT * 0.3,
     );
     this.add.existing(this.luckButton);
 
@@ -88,7 +88,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this.loveButton,
       this.renderedDaruma,
       -this.CANVAS_WIDTH * 0.08,
-      -this.CANVAS_HEIGHT * 0.3
+      -this.CANVAS_HEIGHT * 0.3,
     );
     this.add.existing(this.loveButton);
 
@@ -102,7 +102,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this.healthButton,
       this.renderedDaruma,
       this.CANVAS_WIDTH * 0.08,
-      -this.CANVAS_HEIGHT * 0.3
+      -this.CANVAS_HEIGHT * 0.3,
     );
     this.add.existing(this.healthButton);
 
@@ -115,7 +115,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this.powerButton,
       this.renderedDaruma,
       this.CANVAS_WIDTH * 0.25,
-      -this.CANVAS_HEIGHT * 0.3
+      -this.CANVAS_HEIGHT * 0.3,
     );
     this.add.existing(this.powerButton);
   }
@@ -128,7 +128,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this.goalButton,
       this.renderedDaruma,
       0,
-      this.CANVAS_HEIGHT * 0.3
+      this.CANVAS_HEIGHT * 0.3,
     );
     this.add.existing(this.goalButton);
   }

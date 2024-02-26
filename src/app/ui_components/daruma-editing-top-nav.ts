@@ -24,18 +24,18 @@ export class DarumaEditingUI extends Phaser.GameObjects.Container {
       'daruma_back_button.png',
       () => {
         const previousSceneKey = this.scene.registry.get(
-          RegistryKeys.PREVIOUS_SCENE
+          RegistryKeys.PREVIOUS_SCENE,
         ) as SceneKeys;
         this.scene.scene.stop();
         this.scene.scene.wake(previousSceneKey);
-      }
+      },
     ).setScale(0.2);
     this.logoImage = new Phaser.GameObjects.Image(
       this.scene,
       0,
       0,
       'daruma_buttons',
-      'daruma_create_button.png'
+      'daruma_create_button.png',
     ).setScale(0.2);
     this.deleteButton = new DarumaImageButton(
       this.scene,
@@ -46,7 +46,7 @@ export class DarumaEditingUI extends Phaser.GameObjects.Container {
       () => {
         //TODO probably overkill to restart the whole scene
         this.scene.scene.restart();
-      }
+      },
     ).setScale(0.2);
 
     this.add([this.backButton, this.logoImage, this.deleteButton]);

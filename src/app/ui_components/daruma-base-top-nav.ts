@@ -24,10 +24,10 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       () => {
         this.scene.registry.set(
           RegistryKeys.PREVIOUS_SCENE,
-          this.scene.scene.key
+          this.scene.scene.key,
         );
         this.scene.scene.switch(SceneKeys.DARUMA_EDITING);
-      }
+      },
     ).setScale(0.2);
     this.libraryButton = new DarumaImageButton(
       this.scene,
@@ -38,7 +38,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       () => {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_LIBRARY);
-      }
+      },
     ).setScale(0.2);
     this.archiveButton = new DarumaImageButton(
       this.scene,
@@ -49,7 +49,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       () => {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_ARCHIVE);
-      }
+      },
     ).setScale(0.2);
 
     this.add([this.createButton, this.libraryButton, this.archiveButton]);
