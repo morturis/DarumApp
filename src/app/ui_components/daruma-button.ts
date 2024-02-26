@@ -9,7 +9,7 @@ export class DarumaImageButton extends Phaser.GameObjects.Container {
     y: number,
     texture: string,
     frame: string,
-    action: () => void
+    action: () => void,
   ) {
     super(scene, x, y);
 
@@ -36,7 +36,7 @@ export class DarumaTextButton extends Phaser.GameObjects.Container {
     x: number,
     y: number,
     text: string,
-    action: () => void
+    action: () => void,
   ) {
     super(scene, x, y);
 
@@ -45,7 +45,7 @@ export class DarumaTextButton extends Phaser.GameObjects.Container {
       x,
       y,
       'daruma_buttons',
-      'daruma_text_button.png'
+      'daruma_text_button.png',
     );
     this.add(this.image);
 

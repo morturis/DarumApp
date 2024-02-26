@@ -15,7 +15,10 @@ export class DarumaLibrary extends DarumaList {
     //FIXME using services statically is very hacky
     //TODO add spinner?
     DarumaService.instance.getList(1).subscribe((data) => {
-      this.archivedDarumas = [...data];
+      //Filter, get only those with <2 eyes
+      this.archivedDarumas = [
+        ...data.filter((daruma) => !(daruma.leftEye && daruma.rightEye)),
+      ];
       this.updateRenderedDarumas();
     });
   }

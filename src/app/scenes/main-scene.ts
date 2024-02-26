@@ -27,13 +27,13 @@ export class MainScene extends Phaser.Scene {
     this.load.atlas(
       'daruma_sprite',
       'assets/spritesheets/daruma_sprite.png',
-      'assets/spritesheets/daruma_sprite.json'
+      'assets/spritesheets/daruma_sprite.json',
     );
     //Load button atlas
     this.load.atlas(
       'daruma_buttons',
       'assets/spritesheets/daruma_buttons.png',
-      'assets/spritesheets/daruma_buttons.json'
+      'assets/spritesheets/daruma_buttons.json',
     );
   }
   override update() {
@@ -50,16 +50,16 @@ export class MainScene extends Phaser.Scene {
       0,
       0,
       POINTER_WIDTH,
-      POINTER_HEIGHT
+      POINTER_HEIGHT,
     );
     this.input.on(
       Phaser.Input.Events.POINTER_MOVE,
       (pointer: { x: number; y: number }) => {
         this.pointerGeom.setPosition(
           pointer.x - POINTER_WIDTH / 2,
-          pointer.y - POINTER_HEIGHT / 2
+          pointer.y - POINTER_HEIGHT / 2,
         );
-      }
+      },
     );
   }
 }

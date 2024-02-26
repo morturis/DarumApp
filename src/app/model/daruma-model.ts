@@ -4,7 +4,7 @@ import { DarumaColors } from './daruma-colors';
  * This represents the model obtained from the backend
  */
 export type DarumaModel = {
-  id: number;
+  id?: number;
   leftEye: boolean;
   rightEye: boolean;
   bodyColor: DarumaBodyColor;

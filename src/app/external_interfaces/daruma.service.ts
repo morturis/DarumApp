@@ -72,7 +72,7 @@ export class DarumaService {
     //   .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     const singleDaruma = DarumaService.devValues.find(
-      (daruma) => daruma.id === id
+      (daruma) => daruma.id === id,
     );
     if (!singleDaruma) throw new Error('404');
     return of(singleDaruma).pipe(delay(1000));
@@ -90,6 +90,8 @@ export class DarumaService {
   }
 
   save(model: DarumaModel): Observable<DarumaModel> {
+    if (model.id) return this.update(model);
+
     // const headers = {};
     // return this.http
     //   .post<DarumaModel>(`${BASE_URL}/daruma`, {
@@ -109,7 +111,7 @@ export class DarumaService {
     //   .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     const index = DarumaService.devValues.findIndex(
-      (daruma) => daruma.id === model.id
+      (daruma) => daruma.id === model.id,
     );
     if (!index) throw new Error('404');
     DarumaService.devValues[index] = model;
@@ -125,7 +127,7 @@ export class DarumaService {
 
     //Keeps all except for the deleted element
     DarumaService.devValues = DarumaService.devValues.filter(
-      (daruma) => daruma.id !== model.id
+      (daruma) => daruma.id !== model.id,
     );
     return of(model).pipe(delay(1000));
   }
