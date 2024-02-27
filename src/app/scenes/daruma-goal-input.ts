@@ -2,7 +2,10 @@ import { DarumaColors } from '../model/daruma-colors';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
-import { DarumaTextButton } from '../ui_components/daruma-button';
+import {
+  DarumaImageButton,
+  DarumaTextButton,
+} from '../ui_components/daruma-button';
 import { DarumaEditingTopNav } from '../ui_components/daruma-editing-top-nav';
 import { TextAreaContainer } from '../ui_components/text-area-container';
 import { TextAreaInput } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
@@ -11,6 +14,7 @@ export class DarumaGoalInput extends Phaser.Scene {
   private textAreaTitle!: Phaser.GameObjects.Text;
   private textArea!: TextAreaInput;
   private confirmButton!: DarumaTextButton;
+  private resetButton!: DarumaImageButton;
 
   private CANVAS_WIDTH!: number;
   private CANVAS_HEIGHT!: number;
@@ -93,10 +97,13 @@ export class DarumaGoalInput extends Phaser.Scene {
 
   private addConfirmButton() {
     const yOffset = this.CANVAS_HEIGHT * 0.2;
+    const xOffset = this.CANVAS_WIDTH * 0.1;
     this.confirmButton = new DarumaTextButton(this, 0, 0, 'OK', () => {
-      console.log('CONFIRM button pressed');
       //TODO pass text
-      this.registry.set(RegistryKeys.EDITED_DARUMA_GOAL, this.textArea.text);
+      this.registry.set(
+        RegistryKeys.EDITED_DARUMA_GOAL,
+        this.textArea.text.length > 0 ? this.textArea.text : '',
+      );
       this.scene.switch(SceneKeys.DARUMA_EDITING);
     }).setScale(0.6);
     Phaser.Display.Align.In.Center(
@@ -106,5 +113,23 @@ export class DarumaGoalInput extends Phaser.Scene {
       yOffset,
     );
     this.add.existing(this.confirmButton);
+
+    this.resetButton = new DarumaImageButton(
+      this,
+      0,
+      0,
+      'daruma_buttons',
+      'daruma_reset_button.png',
+      () => {
+        this.textArea.setText('');
+      },
+    ).setScale(0.2);
+    Phaser.Display.Align.In.Center(
+      this.resetButton,
+      this.textArea,
+      +xOffset,
+      yOffset,
+    );
+    this.add.existing(this.resetButton);
   }
 }
