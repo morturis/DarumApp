@@ -20,11 +20,6 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
     this.x = x;
     this.y = y;
 
-    this.updateModel(this.model);
-  }
-
-  updateModel(model: DarumaModel) {
-    this.removeAll(true);
     const leftEyeStatus = model.leftEye ? 'full' : 'empty';
     const rightEyeStatus = model.rightEye ? 'full' : 'empty';
     const bodyColor = `0x${model.bodyColor.toString(16).padStart(6, '0')}`;
@@ -75,6 +70,19 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
     this.add(this.leftEye);
     this.add(this.rightEye);
     this.add(this.belly);
+  }
+
+  updateModel(model: DarumaModel) {
+    const leftEyeStatus = model.leftEye ? 'full' : 'empty';
+    const rightEyeStatus = model.rightEye ? 'full' : 'empty';
+    const bodyColor = `0x${model.bodyColor.toString(16).padStart(6, '0')}`;
+
+    this.darumaBody.setFrame(`daruma_body_${bodyColor}.png`);
+    this.faceBackground.setFrame('daruma_face.png');
+
+    this.leftEye.setFrame(`daruma_left_eye_${leftEyeStatus}.png`);
+    this.rightEye.setFrame(`daruma_right_eye_${rightEyeStatus}.png`);
+    this.belly.setFrame('daruma_belly.png');
   }
   delete() {
     this.removeAll(true);
