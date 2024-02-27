@@ -109,6 +109,8 @@ export class DarumaEditingView extends Phaser.Scene {
     );
     this.saveButton = new DarumaTextButton(this, 0, 0, 'Save', () => {
       DarumaService.instance.save(this.model).subscribe((res) => {
+        //TODO prompt requiring color, and text
+
         //Upon saving, go to the previous scene
         const previousSceneKey = this.registry.get(
           RegistryKeys.PREVIOUS_SCENE,
@@ -171,6 +173,12 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private addCarousel() {
+    const carouselColors = [
+      DarumaBodyColor.BLUE,
+      DarumaBodyColor.PINK,
+      DarumaBodyColor.RED,
+      DarumaBodyColor.YELLOW,
+    ];
     const renderedDarumaWidth = this.renderedDaruma.getBounds().width;
     const separationFromRenderedDaruma =
       renderedDarumaWidth / 2 + renderedDarumaWidth * 0.1;
@@ -181,7 +189,13 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_left_carousel.png',
       () => {
-        console.log('left carousel pressed');
+        const indexOfCurrentColor = carouselColors.findIndex(
+          (color) => color === this.model.bodyColor,
+        );
+        this.model.bodyColor = carouselColors.at(
+          indexOfCurrentColor - 1,
+        ) as DarumaBodyColor;
+        this.renderedDaruma.updateModel(this.model);
       },
     );
     Phaser.Display.Align.In.Center(
@@ -199,7 +213,13 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_right_carousel.png',
       () => {
-        console.log('right carousel pressed');
+        const indexOfCurrentColor = carouselColors.findIndex(
+          (color) => color === this.model.bodyColor,
+        );
+        this.model.bodyColor = carouselColors.at(
+          indexOfCurrentColor + 1,
+        ) as DarumaBodyColor;
+        this.renderedDaruma.updateModel(this.model);
       },
     );
     Phaser.Display.Align.In.Center(
