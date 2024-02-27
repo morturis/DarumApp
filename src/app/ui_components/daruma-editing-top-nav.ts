@@ -3,7 +3,7 @@ import { SceneKeys } from '../model/scene-keys';
 import { DarumaImageButton } from './daruma-button';
 
 //TODO Should not be a scene
-export class DarumaEditingUI extends Phaser.GameObjects.Container {
+export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
   private backButton!: DarumaImageButton;
   private logoImage!: Phaser.GameObjects.Image;
   private deleteButton!: DarumaImageButton;

@@ -4,7 +4,7 @@ import { DarumaBodyColor, DarumaModel } from '../model/daruma-model';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaTextButton } from '../ui_components/daruma-button';
-import { DarumaEditingUI } from '../ui_components/daruma-editing-top-nav';
+import { DarumaEditingTopNav } from '../ui_components/daruma-editing-top-nav';
 import { DarumaSprite } from '../ui_components/daruma-sprite';
 import { TextAreaContainer } from '../ui_components/text-area-container';
 import { showDebugBounds } from '../utils';
@@ -32,7 +32,7 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   create() {
-    this.add.existing(new DarumaEditingUI(this));
+    this.add.existing(new DarumaEditingTopNav(this));
 
     const { width: CANVAS_WIDTH, height: CANVAS_HEIGHT } = this.sys.game.canvas;
     this.CANVAS_HEIGHT = CANVAS_HEIGHT;
