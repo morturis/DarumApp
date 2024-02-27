@@ -64,12 +64,10 @@ export class DarumaTextButton extends Phaser.GameObjects.Container {
 
     this.image.on(Phaser.Input.Events.GAMEOBJECT_POINTER_UP, action);
     this.image.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OVER, () => {
-      console.log('hover');
       this.image.setTint(DarumaColors.HEX.GRAY); //slightly darken
       this.text?.setColor(DarumaColors.STRING.WHITE);
     });
     this.image.on(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, () => {
-      console.log('no hover');
       this.image.setTint();
       this.text?.setColor(DarumaColors.STRING.BLACK);
     });

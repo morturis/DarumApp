@@ -6,7 +6,7 @@ import { DarumaImageButton } from './daruma-button';
 export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
   private backButton!: DarumaImageButton;
   private logoImage!: Phaser.GameObjects.Image;
-  private deleteButton!: DarumaImageButton;
+  private resetButton!: DarumaImageButton;
 
   constructor(scene: Phaser.Scene) {
     super(scene);
@@ -35,14 +35,14 @@ export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_buttons',
-      'daruma_create_button.png',
+      'daruma_create_button_selected.png',
     ).setScale(0.2);
-    this.deleteButton = new DarumaImageButton(
+    this.resetButton = new DarumaImageButton(
       this.scene,
       100,
       0,
       'daruma_buttons',
-      'daruma_delete_button.png',
+      'daruma_reset_button.png',
       () => {
         //TODO probably overkill to restart the whole scene
         this.scene.scene.restart();

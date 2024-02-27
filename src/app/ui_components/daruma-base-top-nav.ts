@@ -1,3 +1,4 @@
+import { Scene } from 'phaser';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaImageButton } from './daruma-button';
@@ -15,12 +16,15 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
   }
 
   private addButtons() {
+    const currentSceneKey = this.scene.scene.key;
     this.createButton = new DarumaImageButton(
       this.scene,
       -100,
       0,
       'daruma_buttons',
-      'daruma_create_button.png',
+      currentSceneKey === SceneKeys.DARUMA_EDITING
+        ? 'daruma_create_button_selected.png'
+        : 'daruma_create_button.png',
       () => {
         this.scene.registry.set(
           RegistryKeys.PREVIOUS_SCENE,
@@ -34,7 +38,9 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_buttons',
-      'daruma_library_button.png',
+      currentSceneKey === SceneKeys.DARUMA_LIBRARY
+        ? 'daruma_library_button_selected.png'
+        : 'daruma_library_button.png',
       () => {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_LIBRARY);
@@ -45,7 +51,9 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       100,
       0,
       'daruma_buttons',
-      'daruma_archive_button.png',
+      currentSceneKey === SceneKeys.DARUMA_ARCHIVE
+        ? 'daruma_archive_button_selected.png'
+        : 'daruma_archive_button.png',
       () => {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_ARCHIVE);
