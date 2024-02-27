@@ -50,7 +50,7 @@ export class DarumaTextButton extends Phaser.GameObjects.Container {
     this.add(this.image);
 
     this.text = new Phaser.GameObjects.Text(scene, x, y, text, {
-      fontSize: 80,
+      fontSize: 60,
       strokeThickness: 6,
       align: 'center',
       color: DarumaColors.STRING.BLACK,
