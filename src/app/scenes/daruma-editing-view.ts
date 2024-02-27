@@ -197,8 +197,9 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_left_carousel.png',
       () => {
-        const indexOfCurrentColor = carouselColors.findIndex(
-          (color) => color === this.model.bodyColor,
+        const indexOfCurrentColor = Math.max(
+          carouselColors.findIndex((color) => color === this.model.bodyColor),
+          0,
         );
         this.model.bodyColor = carouselColors.at(
           indexOfCurrentColor - 1,
@@ -224,8 +225,9 @@ export class DarumaEditingView extends Phaser.Scene {
         const indexOfCurrentColor = carouselColors.findIndex(
           (color) => color === this.model.bodyColor,
         );
+
         this.model.bodyColor = carouselColors.at(
-          indexOfCurrentColor + 1,
+          (indexOfCurrentColor + 1) % carouselColors.length,
         ) as DarumaBodyColor;
         this.renderedDaruma.updateModel(this.model);
       },
