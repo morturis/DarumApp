@@ -29,10 +29,18 @@ export class DarumaList extends Phaser.Scene {
     this.add.existing(new DarumaBaseTopNav(this));
 
     this.updateRenderedDarumas();
+
+    //Set up refreshing on waking
+    this.events.on(Phaser.Scenes.Events.WAKE, () => {
+      this.loadDarumas();
+    });
   }
 
-  //This is just a default method
   preload() {
+    this.loadDarumas();
+  }
+
+  loadDarumas() {
     throw new Error('Method not implemented');
   }
 

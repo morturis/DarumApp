@@ -8,7 +8,7 @@ export class DarumaArchive extends DarumaList {
   constructor() {
     super({ key: SceneKeys.DARUMA_ARCHIVE });
   }
-  override preload() {
+  override loadDarumas() {
     this.archivedDarumas = [];
     this.renderedDarumas = [];
 
