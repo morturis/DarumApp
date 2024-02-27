@@ -106,7 +106,7 @@
       }
     },
     {
-      "filename": "daruma_left_carousel.png",
+      "filename": "daruma_delete_button.png",
       "frame": {
         "x": 493,
         "y": 250,
@@ -127,7 +127,7 @@
       }
     },
     {
-      "filename": "daruma_library_button.png",
+      "filename": "daruma_left_carousel.png",
       "frame": {
         "x": 1,
         "y": 499,
@@ -148,7 +148,7 @@
       }
     },
     {
-      "filename": "daruma_library_button_selected.png",
+      "filename": "daruma_library_button.png",
       "frame": {
         "x": 247,
         "y": 499,
@@ -169,7 +169,7 @@
       }
     },
     {
-      "filename": "daruma_reset_button.png",
+      "filename": "daruma_library_button_selected.png",
       "frame": {
         "x": 493,
         "y": 499,
@@ -190,7 +190,7 @@
       }
     },
     {
-      "filename": "daruma_right_carousel.png",
+      "filename": "daruma_reset_button.png",
       "frame": {
         "x": 739,
         "y": 1,
@@ -211,10 +211,31 @@
       }
     },
     {
-      "filename": "daruma_text_button.png",
+      "filename": "daruma_right_carousel.png",
       "frame": {
         "x": 739,
         "y": 250,
+        "w": 244,
+        "h": 247
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 244,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 244,
+        "h": 247
+      }
+    },
+    {
+      "filename": "daruma_text_button.png",
+      "frame": {
+        "x": 739,
+        "y": 499,
         "w": 244,
         "h": 247
       },
