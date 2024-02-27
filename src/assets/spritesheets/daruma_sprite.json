@@ -43,7 +43,7 @@
       }
     },
     {
-      "filename": "daruma_body_0x0004df.png",
+      "filename": "daruma_body_blue.png",
       "frame": {
         "x": 493,
         "y": 1,
@@ -64,7 +64,7 @@
       }
     },
     {
-      "filename": "daruma_body_0xdf0000.png",
+      "filename": "daruma_body_red.png",
       "frame": {
         "x": 1,
         "y": 250,
@@ -85,7 +85,7 @@
       }
     },
     {
-      "filename": "daruma_body_0xempty_dotted.png",
+      "filename": "daruma_body_empty_dotted.png",
       "frame": {
         "x": 247,
         "y": 250,

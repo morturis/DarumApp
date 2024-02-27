@@ -68,9 +68,8 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
   updateModel(model: DarumaModel) {
     const leftEyeStatus = model.leftEye ? 'full' : 'empty';
     const rightEyeStatus = model.rightEye ? 'full' : 'empty';
-    const bodyColor = `0x${model.bodyColor.toString(16).padStart(6, '0')}`;
 
-    const bodyFrame = `daruma_body_${bodyColor}.png`;
+    const bodyFrame = `daruma_body_${model.bodyColor}.png`;
     const leftEyeFrame = `daruma_left_eye_${leftEyeStatus}.png`;
     const rightEyeFrame = `daruma_right_eye_${rightEyeStatus}.png`;
     const topSkinFrame = `daruma_skin_top_${model.topSkin}.png`;

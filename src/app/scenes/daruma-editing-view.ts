@@ -190,12 +190,10 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private addCarousel() {
-    const carouselColors = [
-      DarumaBodyColor.BLUE,
-      DarumaBodyColor.PINK,
-      DarumaBodyColor.RED,
-      DarumaBodyColor.YELLOW,
-    ];
+    const carouselColors: DarumaBodyColor[] = Object.values(
+      DarumaBodyColor,
+    ).filter((color) => color !== DarumaBodyColor.EMPTY_DOTTED);
+
     const renderedDarumaWidth = this.renderedDaruma.getBounds().width;
     const separationFromRenderedDaruma =
       renderedDarumaWidth / 2 + renderedDarumaWidth * 0.1;
