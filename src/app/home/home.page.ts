@@ -6,6 +6,7 @@ import { DarumaEditingView } from '../scenes/daruma-editing-view';
 import { DarumaLibrary } from '../scenes/daruma-library';
 import { MainScene } from '../scenes/main-scene';
 import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
+import { DarumaGoalInput } from '../scenes/daruma-goal-input';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,7 @@ export class HomePage implements OnInit {
         DarumaLibrary,
         DarumaEditingView,
         DarumaEyePainting,
+        DarumaGoalInput,
       ],
       parent: 'gameContainer',
       autoCenter: Phaser.Scale.CENTER_BOTH,

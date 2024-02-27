@@ -49,7 +49,7 @@ export class DarumaEditingUI extends Phaser.GameObjects.Container {
       },
     ).setScale(0.2);
 
-    this.add([this.backButton, this.logoImage, this.deleteButton]);
+    this.add([this.backButton, this.logoImage]);
     this.setDepth(999);
   }
 }

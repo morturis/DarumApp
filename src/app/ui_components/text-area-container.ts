@@ -109,4 +109,8 @@ export class TextAreaContainer extends Phaser.GameObjects.Container {
       this.scene.registry.set(RegistryKeys.GAME_STATE, gameState);
     });
   }
+
+  getText() {
+    return 'test';
+  }
 }

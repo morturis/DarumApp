@@ -21,8 +21,8 @@ export class DarumaEditingView extends Phaser.Scene {
   private healthButton!: DarumaTextButton;
   private powerButton!: DarumaTextButton;
 
-  private textAreaTitle!: Phaser.GameObjects.Text;
-  private textArea!: TextAreaContainer;
+  private goalButton!: DarumaTextButton;
+  private darumaText!: Phaser.GameObjects.Text;
 
   private CANVAS_WIDTH!: number;
   private CANVAS_HEIGHT!: number;
@@ -39,9 +39,9 @@ export class DarumaEditingView extends Phaser.Scene {
     this.CANVAS_WIDTH = CANVAS_WIDTH;
 
     this.renderDaruma();
-    this.addTextArea();
     this.addSaveDeleteButtons();
-    this.addTypeButtons();
+    this.addGoalButton();
+    //this.addTypeButtons();
   }
 
   preload() {
@@ -58,44 +58,10 @@ export class DarumaEditingView extends Phaser.Scene {
     //TODO get from database? use registry only for ID?
   }
 
-  private addTextArea() {
-    const textAreaWidth = Math.min(this.CANVAS_WIDTH / 4, 200);
-    const textAreaHeight = Math.min(this.CANVAS_HEIGHT / 4, 200);
-    this.textArea = new TextAreaContainer(
-      this,
-      'placeholder...',
-      textAreaWidth,
-      textAreaHeight,
-    );
-    this.textArea.setDepth(999);
-    Phaser.Display.Align.In.Center(
-      this.textArea,
-      this.renderedDaruma,
-      0,
-      this.CANVAS_HEIGHT * -0.4,
-    );
-    this.add.existing(this.textArea);
-
-    this.textAreaTitle = new Phaser.GameObjects.Text(
-      this,
-      0,
-      0,
-      'Write your dream',
-      { color: DarumaColors.STRING.GRAY, fontSize: 24 },
-    );
-    Phaser.Display.Align.In.Center(
-      this.textAreaTitle,
-      this.textArea,
-      0,
-      -(textAreaHeight / 2 + 25),
-    );
-    this.add.existing(this.textAreaTitle);
-  }
-
   private renderDaruma() {
     this.renderedDaruma = new DarumaSprite(this, 0, 0, this.model);
     this.renderedDaruma.x = this.CANVAS_WIDTH / 2;
-    this.renderedDaruma.y = this.CANVAS_HEIGHT * 0.7;
+    this.renderedDaruma.y = this.CANVAS_HEIGHT * 0.4;
     this.add.existing(this.renderedDaruma);
 
     this.renderedDaruma.setLeftEyeCallback(() => {
@@ -108,8 +74,35 @@ export class DarumaEditingView extends Phaser.Scene {
     });
   }
 
+  private addGoalButton() {
+    const yOffset = Math.min(
+      this.CANVAS_HEIGHT * 0.3,
+      this.renderedDaruma.getBounds().height,
+    );
+    this.goalButton = new DarumaTextButton(this, 0, 0, 'GOAL', () => {
+      console.log('GOAL button pressed');
+      this.scene.switch(SceneKeys.DARUMA_GOAL_INPUT);
+    }).setScale(0.5);
+    Phaser.Display.Align.In.Center(
+      this.goalButton,
+      this.renderedDaruma,
+      0,
+      yOffset,
+    );
+    this.add.existing(this.goalButton);
+
+    //The first time I wake, I get the goal (this assumes this screen can only be awoken by DarumaGoalInput)
+    this.events.on(Phaser.Scenes.Events.WAKE, () => {
+      this.events.removeListener(Phaser.Scenes.Events.WAKE); //prevent the event from triggering twice
+      this.model.goals = this.registry.get(RegistryKeys.EDITED_DARUMA_GOAL);
+      this.renderedDaruma.updateModel(this.model); //probably not necessary to update the daruma
+      this.addText();
+    });
+  }
+
   private addTypeButtons() {
     const yOffset = 0;
+
     this.luckButton = new DarumaTextButton(this, 0, 0, 'LUCK', () => {
       console.log('LUCK button pressed');
       this.model.bodyColor = DarumaBodyColor.RED;
@@ -165,6 +158,10 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private addSaveDeleteButtons() {
+    const yOffset = Math.min(
+      this.CANVAS_HEIGHT * 0.3,
+      this.renderedDaruma.getBounds().height,
+    );
     this.saveButton = new DarumaTextButton(this, 0, 0, 'Create', () => {
       DarumaService.instance.save(this.model).subscribe((res) => {
         //Upon saving, go to the previous scene
@@ -179,7 +176,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this.saveButton,
       this.renderedDaruma,
       -this.CANVAS_WIDTH * 0.2,
-      this.CANVAS_HEIGHT * -0.2,
+      yOffset,
     );
     this.add.existing(this.saveButton);
 
@@ -198,8 +195,31 @@ export class DarumaEditingView extends Phaser.Scene {
       this.deleteButton,
       this.renderedDaruma,
       this.CANVAS_WIDTH * 0.2,
-      this.CANVAS_HEIGHT * -0.2,
+      yOffset,
     );
     this.add.existing(this.deleteButton);
+  }
+
+  private addText() {
+    const yOffset = Math.min(
+      this.CANVAS_HEIGHT * 0.2,
+      this.renderedDaruma.getBounds().height,
+    );
+    if (this.darumaText) this.darumaText.destroy();
+    this.darumaText = new Phaser.GameObjects.Text(
+      this,
+      0,
+      0,
+      this.model.goals,
+      { fontSize: 24, color: DarumaColors.STRING.WHITE },
+    );
+
+    Phaser.Display.Align.In.Center(
+      this.darumaText,
+      this.renderedDaruma,
+      0,
+      yOffset,
+    );
+    this.add.existing(this.darumaText);
   }
 }
