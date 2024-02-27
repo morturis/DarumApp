@@ -1,6 +1,11 @@
 import { DarumaService } from '../external_interfaces/daruma.service';
 import { DarumaColors } from '../model/daruma-colors';
-import { DarumaBodyColor, DarumaModel } from '../model/daruma-model';
+import {
+  DarumaBodyColor,
+  DarumaBottomSkin,
+  DarumaModel,
+  DarumaTopSkin,
+} from '../model/daruma-model';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import {
@@ -55,11 +60,13 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   preload() {
-    const defaultModel = {
+    const defaultModel: DarumaModel = {
       leftEye: false,
       rightEye: false,
       bodyColor: DarumaBodyColor.EMPTY_DOTTED,
       goals: '',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     };
     this.model = this.registry.get(RegistryKeys.EDITED_DARUMA) || defaultModel;
     //Clear registry for the next time
@@ -142,6 +149,8 @@ export class DarumaEditingView extends Phaser.Scene {
         leftEye: false,
         rightEye: false,
         goals: '',
+        topSkin: DarumaTopSkin.NOTHING,
+        bottomSkin: DarumaBottomSkin.NOTHING,
       };
       this.setGoalText();
       this.renderedDaruma.updateModel(this.model);
@@ -245,6 +254,7 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private addTopSkinCarousel() {
+    const carouselContents = Object.values(DarumaTopSkin);
     const { width: renderedDarumaWidth, height: renderedDarumaHeight } =
       this.renderedDaruma.getBounds();
     const xSeparationFromRenderedDaruma =
@@ -258,7 +268,13 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_left_carousel.png',
       () => {
-        console.log('left top skin carousel pressed');
+        const indexOfCurrentColor = Math.max(
+          carouselContents.findIndex((skin) => skin === this.model.topSkin),
+          0,
+        );
+        this.model.topSkin = carouselContents.at(
+          indexOfCurrentColor - 1,
+        ) as DarumaTopSkin;
         this.renderedDaruma.updateModel(this.model);
       },
     );
@@ -277,7 +293,13 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_right_carousel.png',
       () => {
-        console.log('right top skin carousel pressed');
+        const indexOfCurrentSkin = carouselContents.findIndex(
+          (skin) => skin === this.model.topSkin,
+        );
+
+        this.model.topSkin = carouselContents.at(
+          (indexOfCurrentSkin + 1) % carouselContents.length,
+        ) as DarumaTopSkin;
         this.renderedDaruma.updateModel(this.model);
       },
     );
@@ -294,6 +316,7 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private addBottomSkinCarousel() {
+    const carouselContents = Object.values(DarumaBottomSkin);
     const { width: renderedDarumaWidth, height: renderedDarumaHeight } =
       this.renderedDaruma.getBounds();
     const xSeparationFromRenderedDaruma =
@@ -307,7 +330,13 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_left_carousel.png',
       () => {
-        console.log('left bottom skin carousel pressed');
+        const indexOfCurrentColor = Math.max(
+          carouselContents.findIndex((skin) => skin === this.model.bottomSkin),
+          0,
+        );
+        this.model.bottomSkin = carouselContents.at(
+          indexOfCurrentColor - 1,
+        ) as DarumaBottomSkin;
         this.renderedDaruma.updateModel(this.model);
       },
     );
@@ -326,7 +355,13 @@ export class DarumaEditingView extends Phaser.Scene {
       'daruma_buttons',
       'daruma_right_carousel.png',
       () => {
-        console.log('right bottom skin carousel pressed');
+        const indexOfCurrentSkin = carouselContents.findIndex(
+          (skin) => skin === this.model.bottomSkin,
+        );
+
+        this.model.bottomSkin = carouselContents.at(
+          (indexOfCurrentSkin + 1) % carouselContents.length,
+        ) as DarumaBottomSkin;
         this.renderedDaruma.updateModel(this.model);
       },
     );

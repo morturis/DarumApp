@@ -9,6 +9,8 @@ export type DarumaModel = {
   rightEye: boolean;
   bodyColor: DarumaBodyColor;
   goals: string;
+  topSkin: DarumaTopSkin;
+  bottomSkin: DarumaBottomSkin;
 };
 
 export enum DarumaBodyColor {
@@ -17,4 +19,14 @@ export enum DarumaBodyColor {
   PINK = DarumaColors.HEX.PINK,
   YELLOW = DarumaColors.HEX.YELLOW,
   EMPTY_DOTTED = 'empty_dotted',
+}
+
+export enum DarumaTopSkin {
+  NOTHING = 'nothing',
+  SNOW_HAT = '0',
+}
+
+export enum DarumaBottomSkin {
+  NOTHING = 'nothing',
+  REGAL_MOUSTACHE = '0',
 }
