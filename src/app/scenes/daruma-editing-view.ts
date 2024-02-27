@@ -25,6 +25,12 @@ export class DarumaEditingView extends Phaser.Scene {
   private leftCarouselButton!: DarumaImageButton;
   private rightCarouselButton!: DarumaImageButton;
 
+  private leftTopSkinCarouselButton!: DarumaImageButton;
+  private rightTopSkinCarouselButton!: DarumaImageButton;
+
+  private leftBottomSkinCarouselButton!: DarumaImageButton;
+  private rightBottomSkinCarouselButton!: DarumaImageButton;
+
   private CANVAS_WIDTH!: number;
   private CANVAS_HEIGHT!: number;
 
@@ -44,6 +50,8 @@ export class DarumaEditingView extends Phaser.Scene {
     this.addGoalButton();
     this.setGoalText();
     this.addCarousel();
+    this.addTopSkinCarousel();
+    this.addBottomSkinCarousel();
   }
 
   preload() {
@@ -232,5 +240,103 @@ export class DarumaEditingView extends Phaser.Scene {
 
     this.leftCarouselButton.setScale(0.3);
     this.rightCarouselButton.setScale(0.3);
+  }
+
+  private addTopSkinCarousel() {
+    const { width: renderedDarumaWidth, height: renderedDarumaHeight } =
+      this.renderedDaruma.getBounds();
+    const xSeparationFromRenderedDaruma =
+      renderedDarumaWidth / 2 + renderedDarumaWidth * 0.075;
+    const ySeparationFromRenderedDaruma =
+      renderedDarumaHeight / 2 - renderedDarumaHeight * 0.2;
+    this.leftTopSkinCarouselButton = new DarumaImageButton(
+      this,
+      0,
+      0,
+      'daruma_buttons',
+      'daruma_left_carousel.png',
+      () => {
+        console.log('left top skin carousel pressed');
+        this.renderedDaruma.updateModel(this.model);
+      },
+    );
+    Phaser.Display.Align.In.Center(
+      this.leftTopSkinCarouselButton,
+      this.renderedDaruma,
+      -xSeparationFromRenderedDaruma,
+      -ySeparationFromRenderedDaruma,
+    );
+    this.add.existing(this.leftTopSkinCarouselButton);
+
+    this.rightTopSkinCarouselButton = new DarumaImageButton(
+      this,
+      0,
+      0,
+      'daruma_buttons',
+      'daruma_right_carousel.png',
+      () => {
+        console.log('right top skin carousel pressed');
+        this.renderedDaruma.updateModel(this.model);
+      },
+    );
+    Phaser.Display.Align.In.Center(
+      this.rightTopSkinCarouselButton,
+      this.renderedDaruma,
+      xSeparationFromRenderedDaruma,
+      -ySeparationFromRenderedDaruma,
+    );
+    this.add.existing(this.rightTopSkinCarouselButton);
+
+    this.leftTopSkinCarouselButton.setScale(0.15);
+    this.rightTopSkinCarouselButton.setScale(0.15);
+  }
+
+  private addBottomSkinCarousel() {
+    const { width: renderedDarumaWidth, height: renderedDarumaHeight } =
+      this.renderedDaruma.getBounds();
+    const xSeparationFromRenderedDaruma =
+      renderedDarumaWidth / 2 + renderedDarumaWidth * 0.075;
+    const ySeparationFromRenderedDaruma =
+      renderedDarumaHeight / 2 - renderedDarumaHeight * 0.2;
+    this.leftBottomSkinCarouselButton = new DarumaImageButton(
+      this,
+      0,
+      0,
+      'daruma_buttons',
+      'daruma_left_carousel.png',
+      () => {
+        console.log('left bottom skin carousel pressed');
+        this.renderedDaruma.updateModel(this.model);
+      },
+    );
+    Phaser.Display.Align.In.Center(
+      this.leftBottomSkinCarouselButton,
+      this.renderedDaruma,
+      -xSeparationFromRenderedDaruma,
+      ySeparationFromRenderedDaruma,
+    );
+    this.add.existing(this.leftBottomSkinCarouselButton);
+
+    this.rightBottomSkinCarouselButton = new DarumaImageButton(
+      this,
+      0,
+      0,
+      'daruma_buttons',
+      'daruma_right_carousel.png',
+      () => {
+        console.log('right bottom skin carousel pressed');
+        this.renderedDaruma.updateModel(this.model);
+      },
+    );
+    Phaser.Display.Align.In.Center(
+      this.rightBottomSkinCarouselButton,
+      this.renderedDaruma,
+      xSeparationFromRenderedDaruma,
+      ySeparationFromRenderedDaruma,
+    );
+    this.add.existing(this.rightBottomSkinCarouselButton);
+
+    this.leftBottomSkinCarouselButton.setScale(0.15);
+    this.rightBottomSkinCarouselButton.setScale(0.15);
   }
 }
