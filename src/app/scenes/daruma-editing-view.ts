@@ -1,4 +1,5 @@
 import { DarumaService } from '../external_interfaces/daruma.service';
+import { DarumaColors } from '../model/daruma-colors';
 import { DarumaBodyColor, DarumaModel } from '../model/daruma-model';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
@@ -74,6 +75,21 @@ export class DarumaEditingView extends Phaser.Scene {
       this.CANVAS_HEIGHT * -0.4,
     );
     this.add.existing(this.textArea);
+
+    this.textAreaTitle = new Phaser.GameObjects.Text(
+      this,
+      0,
+      0,
+      'Write your dream',
+      { color: DarumaColors.STRING.GRAY, fontSize: 24 },
+    );
+    Phaser.Display.Align.In.Center(
+      this.textAreaTitle,
+      this.textArea,
+      0,
+      -(textAreaHeight / 2 + 25),
+    );
+    this.add.existing(this.textAreaTitle);
   }
 
   private renderDaruma() {
@@ -149,7 +165,7 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private addSaveDeleteButtons() {
-    this.saveButton = new DarumaTextButton(this, 0, 0, 'Save', () => {
+    this.saveButton = new DarumaTextButton(this, 0, 0, 'Create', () => {
       DarumaService.instance.save(this.model).subscribe((res) => {
         //Upon saving, go to the previous scene
         const previousSceneKey = this.registry.get(
