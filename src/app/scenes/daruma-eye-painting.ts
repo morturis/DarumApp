@@ -1,8 +1,14 @@
 import { DarumaService } from '../external_interfaces/daruma.service';
-import { DarumaBodyColor, DarumaModel } from '../model/daruma-model';
+import {
+  DarumaBodyColor,
+  DarumaBottomSkin,
+  DarumaModel,
+  DarumaTopSkin,
+} from '../model/daruma-model';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
+import { DarumaImageButton } from '../ui_components/daruma-button';
 import { DarumaSprite } from '../ui_components/daruma-sprite';
 
 export class DarumaEyePainting extends Phaser.Scene {
@@ -18,7 +24,27 @@ export class DarumaEyePainting extends Phaser.Scene {
   }
 
   create() {
-    this.add.existing(new DarumaBaseTopNav(this));
+    const topNav = new DarumaBaseTopNav(this);
+    topNav.addExtraButton(
+      new DarumaImageButton(
+        this,
+        0,
+        0,
+        'daruma_buttons',
+        'daruma_delete_button.png',
+        () => {
+          DarumaService.instance.delete(this.model).subscribe(() => {
+            const previousSceneKey = this.registry.get(
+              RegistryKeys.PREVIOUS_SCENE,
+            ) as SceneKeys;
+            this.scene.stop();
+            if (!previousSceneKey) this.scene.start(SceneKeys.MAIN);
+            else this.scene.wake(previousSceneKey);
+          });
+        },
+      ),
+    );
+    this.add.existing(topNav);
 
     const { width: CANVAS_WIDTH, height: CANVAS_HEIGHT } = this.sys.game.canvas;
     this.CANVAS_HEIGHT = CANVAS_HEIGHT;
@@ -33,6 +59,8 @@ export class DarumaEyePainting extends Phaser.Scene {
       rightEye: false,
       bodyColor: DarumaBodyColor.EMPTY_DOTTED,
       goals: '',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     };
     this.model = this.registry.get(RegistryKeys.EDITED_DARUMA) || defaultModel;
     //Clear registry for the next time

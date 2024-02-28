@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay, of } from 'rxjs';
-import { DarumaBodyColor, DarumaModel } from '../model/daruma-model';
+import {
+  DarumaBodyColor,
+  DarumaBottomSkin,
+  DarumaModel,
+  DarumaTopSkin,
+} from '../model/daruma-model';
 
 const BASE_URL = 'http://34.175.64.33:3000';
 
@@ -21,6 +26,8 @@ export class DarumaService {
       rightEye: true,
       bodyColor: DarumaBodyColor.BLUE,
       goals: 'Que me crezca un nuevo brazo',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     },
     {
       id: 2,
@@ -28,6 +35,8 @@ export class DarumaService {
       rightEye: true,
       bodyColor: DarumaBodyColor.RED,
       goals: 'Ganar la loteria',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     },
     {
       id: 3,
@@ -35,6 +44,8 @@ export class DarumaService {
       rightEye: true,
       bodyColor: DarumaBodyColor.BLUE,
       goals: ':D',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     },
     {
       id: 4,
@@ -42,13 +53,17 @@ export class DarumaService {
       rightEye: true,
       bodyColor: DarumaBodyColor.RED,
       goals: 'Que me parta un rayo',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     },
     {
       id: 5,
       leftEye: true,
       rightEye: false,
       bodyColor: DarumaBodyColor.BLUE,
-      goals: 'D:',
+      goals: 'Stop being sad',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     },
     {
       id: 6,
@@ -56,6 +71,8 @@ export class DarumaService {
       rightEye: false,
       bodyColor: DarumaBodyColor.BLUE,
       goals: 'Ni idea bro esto es solo para dev',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     },
   ];
 

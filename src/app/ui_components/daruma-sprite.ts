@@ -6,13 +6,14 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
 
   private darumaBody!: Phaser.GameObjects.Image;
   private bodyCallback?: () => void;
-  private faceBackground!: Phaser.GameObjects.Image;
+
   private leftEye!: Phaser.GameObjects.Image;
   private leftEyeCallback?: () => void;
   private rightEye!: Phaser.GameObjects.Image;
   private rightEyeCallback?: () => void;
-  private belly!: Phaser.GameObjects.Image;
-  private bellyCallback?: () => void;
+
+  private topSkin!: Phaser.GameObjects.Image;
+  private bottomSkin!: Phaser.GameObjects.Image;
 
   constructor(scene: Phaser.Scene, x: number, y: number, model: DarumaModel) {
     super(scene);
@@ -20,32 +21,19 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
     this.x = x;
     this.y = y;
 
-    const leftEyeStatus = model.leftEye ? 'full' : 'empty';
-    const rightEyeStatus = model.rightEye ? 'full' : 'empty';
-    const bodyColor = `0x${model.bodyColor.toString(16).padStart(6, '0')}`;
-
     this.darumaBody = new Phaser.GameObjects.Image(
       this.scene,
       0,
       0,
       'daruma_sprite',
-      `daruma_body_${bodyColor}.png`,
     );
     if (this.bodyCallback) this.setBodyCallback(this.bodyCallback);
-    this.faceBackground = new Phaser.GameObjects.Image(
-      this.scene,
-      0,
-      0,
-      'daruma_sprite',
-      'daruma_face.png',
-    );
 
     this.leftEye = new Phaser.GameObjects.Image(
       this.scene,
       0,
       0,
       'daruma_sprite',
-      `daruma_left_eye_${leftEyeStatus}.png`,
     );
     if (this.leftEyeCallback) this.setLeftEyeCallback(this.leftEyeCallback);
     this.rightEye = new Phaser.GameObjects.Image(
@@ -53,36 +41,47 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       0,
       0,
       'daruma_sprite',
-      `daruma_right_eye_${rightEyeStatus}.png`,
     );
     if (this.rightEyeCallback) this.setRightEyeCallback(this.rightEyeCallback);
-    this.belly = new Phaser.GameObjects.Image(
+    this.topSkin = new Phaser.GameObjects.Image(
       this.scene,
       0,
       0,
       'daruma_sprite',
-      'daruma_belly.png',
     );
-    if (this.bellyCallback) this.setBellyCallback(this.bellyCallback);
+    this.bottomSkin = new Phaser.GameObjects.Image(
+      this.scene,
+      0,
+      0,
+      'daruma_sprite',
+    );
+
+    this.updateModel(model);
 
     this.add(this.darumaBody);
-    this.add(this.faceBackground);
+    this.add(this.topSkin);
     this.add(this.leftEye);
     this.add(this.rightEye);
-    this.add(this.belly);
+    this.add(this.bottomSkin);
   }
 
   updateModel(model: DarumaModel) {
     const leftEyeStatus = model.leftEye ? 'full' : 'empty';
     const rightEyeStatus = model.rightEye ? 'full' : 'empty';
-    const bodyColor = `0x${model.bodyColor.toString(16).padStart(6, '0')}`;
 
-    this.darumaBody.setFrame(`daruma_body_${bodyColor}.png`);
-    this.faceBackground.setFrame('daruma_face.png');
+    const bodyFrame = `daruma_body_${model.bodyColor}.png`;
+    const leftEyeFrame = `daruma_left_eye_${leftEyeStatus}.png`;
+    const rightEyeFrame = `daruma_right_eye_${rightEyeStatus}.png`;
+    const topSkinFrame = `daruma_skin_top_${model.topSkin}.png`;
+    const bottomSkinFrame = `daruma_skin_bottom_${model.bottomSkin}.png`;
 
-    this.leftEye.setFrame(`daruma_left_eye_${leftEyeStatus}.png`);
-    this.rightEye.setFrame(`daruma_right_eye_${rightEyeStatus}.png`);
-    this.belly.setFrame('daruma_belly.png');
+    this.darumaBody.setFrame(bodyFrame);
+
+    this.leftEye.setFrame(leftEyeFrame);
+    this.rightEye.setFrame(rightEyeFrame);
+
+    this.topSkin.setFrame(topSkinFrame);
+    this.bottomSkin.setFrame(bottomSkinFrame);
   }
   delete() {
     this.removeAll(true);
@@ -130,19 +129,6 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       })
       .on(Phaser.Input.Events.POINTER_OUT, () => {
         this.rightEye.setTint();
-      });
-  }
-
-  setBellyCallback(fun: () => void) {
-    this.bellyCallback = fun;
-    this.belly
-      .setInteractive(this.scene.input.makePixelPerfect())
-      .on(Phaser.Input.Events.POINTER_UP, fun)
-      .on(Phaser.Input.Events.POINTER_OVER, () => {
-        this.belly.setTint(DarumaColors.HEX.GRAY);
-      })
-      .on(Phaser.Input.Events.POINTER_OUT, () => {
-        this.belly.setTint();
       });
   }
 }
