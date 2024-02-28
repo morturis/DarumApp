@@ -1,5 +1,10 @@
 import { DarumaService } from '../external_interfaces/daruma.service';
-import { DarumaBodyColor, DarumaModel } from '../model/daruma-model';
+import {
+  DarumaBodyColor,
+  DarumaBottomSkin,
+  DarumaModel,
+  DarumaTopSkin,
+} from '../model/daruma-model';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
@@ -54,6 +59,8 @@ export class DarumaEyePainting extends Phaser.Scene {
       rightEye: false,
       bodyColor: DarumaBodyColor.EMPTY_DOTTED,
       goals: '',
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
     };
     this.model = this.registry.get(RegistryKeys.EDITED_DARUMA) || defaultModel;
     //Clear registry for the next time
