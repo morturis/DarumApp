@@ -1,25 +1,31 @@
 import { Scene } from 'phaser';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
-import { DarumaImageButton } from './daruma-button';
+import { DarumaImageButton, DarumaTextButton } from './daruma-button';
 
 export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
   private createButton!: DarumaImageButton;
   private libraryButton!: DarumaImageButton;
   private archiveButton!: DarumaImageButton;
 
+  private extraButton?: DarumaImageButton;
+
+  private buttonXOffset!: number;
+
   constructor(scene: Phaser.Scene) {
     super(scene);
-    this.addButtons();
+    this.buttonXOffset = this.scene.game.canvas.width * 0.1;
     this.x = this.scene.game.canvas.width / 2;
     this.y = 50;
+    this.addButtons();
+    this.setDepth(999);
   }
 
   private addButtons() {
     const currentSceneKey = this.scene.scene.key;
     this.createButton = new DarumaImageButton(
       this.scene,
-      -100,
+      -this.buttonXOffset,
       0,
       'daruma_buttons',
       currentSceneKey === SceneKeys.DARUMA_EDITING
@@ -48,7 +54,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
     ).setScale(0.2);
     this.archiveButton = new DarumaImageButton(
       this.scene,
-      100,
+      this.buttonXOffset,
       0,
       'daruma_buttons',
       currentSceneKey === SceneKeys.DARUMA_ARCHIVE
@@ -61,6 +67,13 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
     ).setScale(0.2);
 
     this.add([this.createButton, this.libraryButton, this.archiveButton]);
-    this.setDepth(999);
+  }
+
+  addExtraButton(button: DarumaImageButton) {
+    this.extraButton = button;
+    this.extraButton.x = 2 * this.buttonXOffset + button.x;
+    this.extraButton.setScale(0.18);
+
+    this.add(this.extraButton);
   }
 }

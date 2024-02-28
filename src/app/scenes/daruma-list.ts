@@ -35,7 +35,7 @@ export class DarumaList extends Phaser.Scene {
   }
 
   updateRenderedDarumas() {
-    this.renderedDarumas.map((daruma) => daruma.destroy);
+    this.renderedDarumas.map((daruma) => daruma.destroy());
     this.renderedDarumas = [];
     this.archivedDarumas.forEach((model: DarumaModel) => {
       //No need to set X or Y because I will align them later

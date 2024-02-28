@@ -8,7 +8,6 @@ export class DarumaLibrary extends DarumaList {
   }
   override loadDarumas() {
     this.archivedDarumas = [];
-    this.renderedDarumas = [];
 
     //This call will keep going even after the scene has been created
     //Could be made async by using the asyncLoader plugin
