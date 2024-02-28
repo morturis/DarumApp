@@ -14,6 +14,7 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
     scene: Phaser.Scene,
     x: number,
     y: number,
+    numberOfButtons: 1 | 2,
     action: () => void,
     title: string,
     content?: string,
@@ -22,13 +23,23 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
   ) {
     super(scene);
 
-    this.createDialog(action, x, y, title, content, confirmText, cancelText);
+    this.createDialog(
+      action,
+      x,
+      y,
+      numberOfButtons,
+      title,
+      content,
+      confirmText,
+      cancelText,
+    );
   }
 
   private createDialog(
     action: () => void,
     x: number,
     y: number,
+    numberOfButtons: 1 | 2,
     title: string,
     content?: string,
     confirmText?: string,
@@ -67,7 +78,7 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
 
       content: content ? contentStyle : undefined,
 
-      buttonMode: 2,
+      buttonMode: numberOfButtons,
       button: {
         space: { left: 10, right: 10, top: 10, bottom: 10 },
         text: {

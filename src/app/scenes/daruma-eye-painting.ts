@@ -67,6 +67,7 @@ export class DarumaEyePainting extends Phaser.Scene {
             this,
             0,
             0,
+            2,
             () => {
               DarumaService.instance.delete(this.model).subscribe(() => {
                 const previousSceneKey = this.registry.get(
