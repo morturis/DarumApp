@@ -1,6 +1,11 @@
-import { ConfirmDialog } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
+import {
+  ConfirmDialog,
+  Dialog,
+  SimpleLabel,
+} from 'phaser3-rex-plugins/templates/ui/ui-components.js';
 import UIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin';
 import { DarumaColors } from '../model/daruma-colors';
+import { ModalBehavoir } from 'phaser3-rex-plugins/plugins/modal';
 
 export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
   private dialog!: ConfirmDialog;
@@ -11,7 +16,7 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
     y: number,
     action: () => void,
     title: string,
-    content: string,
+    content?: string,
     confirmText?: string,
     cancelText?: string,
   ) {
@@ -25,22 +30,31 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
     x: number,
     y: number,
     title: string,
-    content: string,
+    content?: string,
     confirmText?: string,
     cancelText?: string,
   ) {
-    const rexUI = (this.scene as Phaser.Scene & { rexUI?: UIPlugin }).rexUI;
-
-    var style: ConfirmDialog.IConfig = {
-      width: 300,
+    const titleStyle: SimpleLabel.IConfig = {
+      align: 'center',
+      text: {
+        fontSize: 24,
+      },
+    };
+    const contentStyle: SimpleLabel.IConfig = {
+      align: 'center',
+      text: {
+        fontSize: 20,
+      },
+    };
+    const style: ConfirmDialog.IConfig = {
       space: {
-        left: 20,
-        right: 20,
-        top: 20,
-        bottom: 20,
-        title: 20,
-        content: 30,
-        action: 15,
+        left: 15,
+        right: 15,
+        top: title ? 30 : 15,
+        bottom: 20, //space between buttons and bottom edge
+        title: content ? 0 : 10,
+        content: content ? 20 : 0,
+        action: 25,
       },
 
       background: {
@@ -49,31 +63,21 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
         radius: 20,
       },
 
-      title: {
-        space: { left: 5, right: 5, top: 5, bottom: 5 },
-        text: {
-          fontSize: 24,
-        },
-        background: {
-          color: DarumaColors.HEX.BLACK,
-        },
-      },
+      title: title ? titleStyle : undefined,
 
-      content: {
-        space: { left: 5, right: 5, top: 5, bottom: 5 },
-        text: {
-          fontSize: 20,
-        },
-      },
+      content: content ? contentStyle : undefined,
 
       buttonMode: 2,
       button: {
         space: { left: 10, right: 10, top: 10, bottom: 10 },
+        text: {
+          color: DarumaColors.HEX.BLACK, //button text color, possibly an addition!
+        },
         background: {
-          color: DarumaColors.HEX.BLACK,
-          strokeColor: DarumaColors.HEX.WHITE,
+          color: DarumaColors.HEX.WHITE, //fondo del boton
+          strokeColor: DarumaColors.HEX.BLACK, //borde del boton
           radius: 10,
-
+          'hover.color': DarumaColors.HEX.GRAY,
           'hover.strokeColor': DarumaColors.HEX.BLACK,
         },
       },
@@ -84,14 +88,18 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
     };
     this.dialog = new ConfirmDialog(this.scene, style);
     this.dialog.setPosition(x, y);
+    this.dialog.setDraggable('title');
     this.dialog.resetDisplayContent({
-      title: title || '-no title-',
-      content: content || '-no content-',
+      title: title,
+      content: content,
       buttonA: confirmText || 'Confirm',
       buttonB: cancelText || 'Cancel',
     });
     this.dialog.layout();
-    this.dialog.modalPromise().then(action);
+    this.dialog.modalPromise().then((data) => {
+      if ((data as Dialog.CloseEventDataType).index === 1) return;
+      else action();
+    });
 
     this.add(this.dialog);
   }

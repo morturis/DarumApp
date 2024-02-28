@@ -9,12 +9,14 @@ import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
 import { DarumaImageButton } from '../ui_components/daruma-button';
+import { DarumaConfirmDialog } from '../ui_components/daruma-confirm-dialog';
 import { DarumaSprite } from '../ui_components/daruma-sprite';
 
 export class DarumaEyePainting extends Phaser.Scene {
   private model!: DarumaModel;
   private renderedDaruma!: DarumaSprite; //interactive
   private goalText!: Phaser.GameObjects.Text;
+  private topNav!: DarumaBaseTopNav;
 
   private CANVAS_WIDTH!: number;
   private CANVAS_HEIGHT!: number;
@@ -24,27 +26,10 @@ export class DarumaEyePainting extends Phaser.Scene {
   }
 
   create() {
-    const topNav = new DarumaBaseTopNav(this);
-    topNav.addExtraButton(
-      new DarumaImageButton(
-        this,
-        0,
-        0,
-        'daruma_buttons',
-        'daruma_delete_button.png',
-        () => {
-          DarumaService.instance.delete(this.model).subscribe(() => {
-            const previousSceneKey = this.registry.get(
-              RegistryKeys.PREVIOUS_SCENE,
-            ) as SceneKeys;
-            this.scene.stop();
-            if (!previousSceneKey) this.scene.start(SceneKeys.MAIN);
-            else this.scene.wake(previousSceneKey);
-          });
-        },
-      ),
-    );
-    this.add.existing(topNav);
+    this.topNav = new DarumaBaseTopNav(this);
+    this.add.existing(this.topNav);
+
+    this.addDeleteButtonToTopNav();
 
     const { width: CANVAS_WIDTH, height: CANVAS_HEIGHT } = this.sys.game.canvas;
     this.CANVAS_HEIGHT = CANVAS_HEIGHT;
@@ -69,6 +54,42 @@ export class DarumaEyePainting extends Phaser.Scene {
     //TODO get from database? use registry only for ID?}
   }
 
+  private addDeleteButtonToTopNav() {
+    this.topNav.addExtraButton(
+      new DarumaImageButton(
+        this,
+        0,
+        0,
+        'daruma_buttons',
+        'daruma_delete_button.png',
+        () => {
+          const dialogConfirmPrompt = new DarumaConfirmDialog(
+            this,
+            0,
+            0,
+            () => {
+              DarumaService.instance.delete(this.model).subscribe(() => {
+                const previousSceneKey = this.registry.get(
+                  RegistryKeys.PREVIOUS_SCENE,
+                ) as SceneKeys;
+                this.scene.stop();
+                if (!previousSceneKey) this.scene.start(SceneKeys.MAIN);
+                else this.scene.wake(previousSceneKey);
+              });
+            },
+            'Delete Daruma?',
+          );
+          Phaser.Display.Align.In.Center(
+            dialogConfirmPrompt,
+            this.topNav,
+            0,
+            this.CANVAS_HEIGHT * 0.4,
+          );
+          this.add.existing(dialogConfirmPrompt);
+        },
+      ),
+    );
+  }
   private renderDaruma() {
     this.renderedDaruma = new DarumaSprite(this, 0, 0, this.model);
     this.renderedDaruma.x = this.CANVAS_WIDTH / 2;

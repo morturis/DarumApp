@@ -1,7 +1,7 @@
 export namespace DarumaColors {
   export namespace HEX {
     export const GRAY = 0x999999;
-    export const BLACK = 0x000000;
+    export const BLACK = 0x000001;
     export const WHITE = 0xffffff;
     export const BLUE = 0x0004df;
     export const RED = 0xdf0000;
