@@ -15,7 +15,7 @@ import {
 import { DarumaEditingTopNav } from '../ui_components/daruma-editing-top-nav';
 import { DarumaSprite } from '../ui_components/daruma-sprite';
 import { TextAreaContainer } from '../ui_components/text-area-container';
-import { showDebugBounds } from '../utils';
+import { addErrorPrompt, showDebugBounds } from '../utils';
 
 export class DarumaEditingView extends Phaser.Scene {
   private model!: DarumaModel;
@@ -39,6 +39,10 @@ export class DarumaEditingView extends Phaser.Scene {
   private CANVAS_WIDTH!: number;
   private CANVAS_HEIGHT!: number;
 
+  private ALLOWED_BODY_COLORS = Object.values(DarumaBodyColor).filter(
+    (color) => color !== DarumaBodyColor.EMPTY_DOTTED,
+  );
+
   constructor() {
     super({ key: SceneKeys.DARUMA_EDITING });
   }
@@ -51,7 +55,8 @@ export class DarumaEditingView extends Phaser.Scene {
     this.CANVAS_WIDTH = CANVAS_WIDTH;
 
     this.renderDaruma();
-    this.addSaveRestartButtons();
+    this.addSaveButton();
+    this.addResetButton();
     this.addGoalButton();
     this.setGoalText();
     this.addCarousel();
@@ -117,15 +122,26 @@ export class DarumaEditingView extends Phaser.Scene {
     });
   }
 
-  private addSaveRestartButtons() {
+  private addSaveButton() {
     const yOffset = Math.min(
       this.CANVAS_HEIGHT * 0.4,
       this.renderedDaruma.getBounds().height,
     );
     this.saveButton = new DarumaTextButton(this, 0, 0, 'Save', () => {
       DarumaService.instance.save(this.model).subscribe((res) => {
-        //TODO prompt requiring color, and text
+        const shouldAllowSaving =
+          this.ALLOWED_BODY_COLORS.includes(this.model.bodyColor) &&
+          this.model.goals?.length > 0;
 
+        if (!shouldAllowSaving) {
+          addErrorPrompt(
+            this,
+            'You must choose a color and enter a wish to save',
+          );
+          return;
+        }
+
+        //TODO prompt requiring color, and text
         //Upon saving, go to the previous scene
         const previousSceneKey = this.registry.get(
           RegistryKeys.PREVIOUS_SCENE,
@@ -141,7 +157,13 @@ export class DarumaEditingView extends Phaser.Scene {
       yOffset,
     );
     this.add.existing(this.saveButton);
+  }
 
+  private addResetButton() {
+    const yOffset = Math.min(
+      this.CANVAS_HEIGHT * 0.4,
+      this.renderedDaruma.getBounds().height,
+    );
     this.resetButton = new DarumaTextButton(this, 0, 0, 'Reset', () => {
       this.model = {
         id: this.model.id,
