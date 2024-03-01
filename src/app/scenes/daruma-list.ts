@@ -54,7 +54,7 @@ export class DarumaList extends Phaser.Scene {
       this.renderedDarumas[0].getBounds();
     Phaser.Actions.GridAlign(this.renderedDarumas, {
       width: 2,
-      height: 3,
+      height: Math.ceil(this.renderedDarumas.length / 2),
       cellWidth: DARUMA_WIDTH,
       cellHeight: DARUMA_HEIGHT,
       x: (this.sys.game.canvas.width - DARUMA_WIDTH) / 2,
