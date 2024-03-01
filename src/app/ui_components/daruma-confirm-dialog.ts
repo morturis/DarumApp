@@ -3,17 +3,13 @@ import {
   Dialog,
   SimpleLabel,
 } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
-import UIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin';
 import { DarumaColors } from '../model/daruma-colors';
-import { ModalBehavoir } from 'phaser3-rex-plugins/plugins/modal';
 
 export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
   private dialog!: ConfirmDialog;
 
   constructor(
     scene: Phaser.Scene,
-    x: number,
-    y: number,
     numberOfButtons: 1 | 2,
     action: () => void,
     title: string,
@@ -25,8 +21,6 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
 
     this.createDialog(
       action,
-      x,
-      y,
       numberOfButtons,
       title,
       content,
@@ -37,8 +31,6 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
 
   private createDialog(
     action: () => void,
-    x: number,
-    y: number,
     numberOfButtons: 1 | 2,
     title: string,
     content?: string,
@@ -92,14 +84,15 @@ export class DarumaConfirmDialog extends Phaser.GameObjects.Container {
           'hover.strokeColor': DarumaColors.HEX.BLACK,
         },
       },
-
       align: {
         actions: 'center',
       },
     };
     this.dialog = new ConfirmDialog(this.scene, style);
-    this.dialog.setPosition(x, y);
-    this.dialog.setDraggable('title');
+    const { width: CANVAS_WIDTH, height: CANVAS_HEIGHT } =
+      this.scene.game.canvas;
+    this.dialog.setPosition(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2);
+    //this.dialog.setDraggable('title');
     this.dialog.resetDisplayContent({
       title: title,
       content: content,

@@ -65,26 +65,9 @@ export class DarumaEyePainting extends Phaser.Scene {
         () => {
           const dialogConfirmPrompt = new DarumaConfirmDialog(
             this,
-            0,
-            0,
             2,
-            () => {
-              DarumaService.instance.delete(this.model).subscribe(() => {
-                const previousSceneKey = this.registry.get(
-                  RegistryKeys.PREVIOUS_SCENE,
-                ) as SceneKeys;
-                this.scene.stop();
-                if (!previousSceneKey) this.scene.start(SceneKeys.MAIN);
-                else this.scene.wake(previousSceneKey);
-              });
-            },
+            this.deleteDaruma,
             'Delete Daruma?',
-          );
-          Phaser.Display.Align.In.Center(
-            dialogConfirmPrompt,
-            this.topNav,
-            0,
-            this.CANVAS_HEIGHT * 0.4,
           );
           this.add.existing(dialogConfirmPrompt);
         },
@@ -128,5 +111,16 @@ export class DarumaEyePainting extends Phaser.Scene {
       this.CANVAS_HEIGHT * 0.25,
     );
     this.add.existing(this.goalText);
+  }
+
+  private deleteDaruma() {
+    DarumaService.instance.delete(this.model).subscribe(() => {
+      const previousSceneKey = this.registry.get(
+        RegistryKeys.PREVIOUS_SCENE,
+      ) as SceneKeys;
+      this.scene.stop();
+      if (!previousSceneKey) this.scene.start(SceneKeys.MAIN);
+      else this.scene.wake(previousSceneKey);
+    });
   }
 }
