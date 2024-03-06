@@ -48,7 +48,7 @@ export class DarumaGoalInput extends Phaser.Scene {
     const textAreaX = this.CANVAS_WIDTH / 2;
     const textAreaY = this.CANVAS_HEIGHT * 0.4;
 
-    const rexUI = (this as Phaser.Scene & { rexUI?: UIPlugin }).rexUI;
+    const rexUI = (this as Phaser.Scene & { rexUI?: UIPlugin; }).rexUI;
     this.textAreaTitle = new Phaser.GameObjects.Text(
       this,
       0,
@@ -124,7 +124,7 @@ export class DarumaGoalInput extends Phaser.Scene {
       () => {
         this.textArea.setText('');
       },
-    ).setScale(0.2);
+    ).setScale(0.15);
     Phaser.Display.Align.In.Center(
       this.resetButton,
       this.textArea,

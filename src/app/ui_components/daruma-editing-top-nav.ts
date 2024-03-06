@@ -29,14 +29,14 @@ export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
         this.scene.scene.stop();
         this.scene.scene.wake(previousSceneKey);
       },
-    ).setScale(0.2);
+    ).setScale(0.1);
     this.logoImage = new Phaser.GameObjects.Image(
       this.scene,
       0,
       0,
       'daruma_buttons',
       'daruma_create_button_selected.png',
-    ).setScale(0.2);
+    ).setScale(0.1);
     this.resetButton = new DarumaImageButton(
       this.scene,
       100,
@@ -47,9 +47,8 @@ export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
         //TODO probably overkill to restart the whole scene
         this.scene.scene.restart();
       },
-    ).setScale(0.2);
+    ).setScale(0.1);
 
     this.add([this.backButton, this.logoImage]);
-    this.setDepth(999);
   }
 }
