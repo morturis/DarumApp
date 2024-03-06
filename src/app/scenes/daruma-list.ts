@@ -3,10 +3,12 @@ import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
 import { DarumaSprite } from '../ui_components/daruma-sprite';
+import { DarumaTabs } from '../ui_components/daruma-tabs';
 
 export class DarumaList extends Phaser.Scene {
-  archivedDarumas: DarumaModel[] = [];
+  modelDarumas: DarumaModel[] = [];
   renderedDarumas: DarumaSprite[] = [];
+  private tabs!: DarumaTabs;
 
   constructor(config: Phaser.Types.Scenes.SettingsConfig) {
     super({
@@ -17,6 +19,7 @@ export class DarumaList extends Phaser.Scene {
   create() {
     console.log('create started');
     this.add.existing(new DarumaBaseTopNav(this));
+    this.tabs = new DarumaTabs(this, this.sys.canvas.width / 2, this.sys.canvas.height/2);
 
     this.updateRenderedDarumas();
 
@@ -37,7 +40,7 @@ export class DarumaList extends Phaser.Scene {
   updateRenderedDarumas() {
     this.renderedDarumas.map((daruma) => daruma.destroy());
     this.renderedDarumas = [];
-    this.archivedDarumas.forEach((model: DarumaModel) => {
+    this.modelDarumas.forEach((model: DarumaModel) => {
       //No need to set X or Y because I will align them later
       const render = new DarumaSprite(this, 0, 0, model);
       render.setBodyCallback(() => {
@@ -50,15 +53,16 @@ export class DarumaList extends Phaser.Scene {
     });
 
     if (!this.renderedDarumas[0]) return;
-    const { width: DARUMA_WIDTH, height: DARUMA_HEIGHT } =
-      this.renderedDarumas[0].getBounds();
-    Phaser.Actions.GridAlign(this.renderedDarumas, {
-      width: 2,
-      height: Math.ceil(this.renderedDarumas.length / 2),
-      cellWidth: DARUMA_WIDTH,
-      cellHeight: DARUMA_HEIGHT,
-      x: (this.sys.game.canvas.width - DARUMA_WIDTH) / 2,
-      y: 200,
-    });
+    this.tabs.updateTabs(this.renderedDarumas, 6);
+    // const { width: DARUMA_WIDTH, height: DARUMA_HEIGHT } =
+    //   this.renderedDarumas[0].getBounds();
+    // Phaser.Actions.GridAlign(this.renderedDarumas, {
+    //   width: 2,
+    //   height: Math.ceil(this.renderedDarumas.length / 2),
+    //   cellWidth: DARUMA_WIDTH,
+    //   cellHeight: DARUMA_HEIGHT,
+    //   x: (this.sys.game.canvas.width - DARUMA_WIDTH) / 2,
+    //   y: 200,
+    // });
   }
 }
