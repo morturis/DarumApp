@@ -19,7 +19,11 @@ export class DarumaList extends Phaser.Scene {
   create() {
     console.log('create started');
     this.add.existing(new DarumaBaseTopNav(this));
-    this.tabs = new DarumaTabs(this, this.sys.canvas.width / 2, this.sys.canvas.height/2);
+    this.tabs = new DarumaTabs(
+      this,
+      this.sys.canvas.width / 2,
+      this.sys.canvas.height / 2,
+    );
 
     this.updateRenderedDarumas();
 
