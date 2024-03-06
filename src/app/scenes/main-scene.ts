@@ -1,4 +1,5 @@
 import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
+import { DarumaTabs } from '../ui_components/daruma-tabs';
 
 const POINTER_WIDTH = 36;
 const POINTER_HEIGHT = 18;
@@ -18,6 +19,8 @@ export class MainScene extends Phaser.Scene {
     //this.add.existing(new DarumaEditingUI(this));
 
     this.addPointer();
+
+    this.add.existing(new DarumaTabs(this, 0, 0));
   }
 
   preload() {

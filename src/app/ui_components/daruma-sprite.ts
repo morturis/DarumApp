@@ -16,10 +16,8 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
   private bottomSkin!: Phaser.GameObjects.Image;
 
   constructor(scene: Phaser.Scene, x: number, y: number, model: DarumaModel) {
-    super(scene);
+    super(scene, x, y);
     this.model = model;
-    this.x = x;
-    this.y = y;
 
     this.darumaBody = new Phaser.GameObjects.Image(
       this.scene,

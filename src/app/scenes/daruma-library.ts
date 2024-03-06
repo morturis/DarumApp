@@ -7,7 +7,7 @@ export class DarumaLibrary extends DarumaList {
     super({ key: SceneKeys.DARUMA_LIBRARY });
   }
   override loadDarumas() {
-    this.archivedDarumas = [];
+    this.modelDarumas = [];
 
     //This call will keep going even after the scene has been created
     //Could be made async by using the asyncLoader plugin
@@ -15,7 +15,7 @@ export class DarumaLibrary extends DarumaList {
     //TODO add spinner?
     DarumaService.instance.getList(1).subscribe((data) => {
       //Filter, get only those with <2 eyes
-      this.archivedDarumas = [
+      this.modelDarumas = [
         ...data.filter((daruma) => !(daruma.leftEye && daruma.rightEye)),
       ];
       this.updateRenderedDarumas();
