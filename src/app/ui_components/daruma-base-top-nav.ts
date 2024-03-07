@@ -38,7 +38,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
         );
         this.scene.scene.switch(SceneKeys.DARUMA_EDITING);
       },
-    ).setScale(0.2);
+    ).setScale(0.1);
     this.libraryButton = new DarumaImageButton(
       this.scene,
       0,
@@ -51,7 +51,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_LIBRARY);
       },
-    ).setScale(0.2);
+    ).setScale(0.1);
     this.archiveButton = new DarumaImageButton(
       this.scene,
       this.buttonXOffset,
@@ -64,7 +64,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_ARCHIVE);
       },
-    ).setScale(0.2);
+    ).setScale(0.1);
 
     this.add([this.createButton, this.libraryButton, this.archiveButton]);
   }
@@ -72,7 +72,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
   addExtraButton(button: DarumaImageButton) {
     this.extraButton = button;
     this.extraButton.x = 2 * this.buttonXOffset + button.x;
-    this.extraButton.setScale(0.18);
+    this.extraButton.setScale(0.1);
 
     this.add(this.extraButton);
   }

@@ -124,7 +124,7 @@ export class DarumaGoalInput extends Phaser.Scene {
       () => {
         this.textArea.setText('');
       },
-    ).setScale(0.2);
+    ).setScale(0.15);
     Phaser.Display.Align.In.Center(
       this.resetButton,
       this.textArea,

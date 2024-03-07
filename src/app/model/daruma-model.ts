@@ -21,12 +21,23 @@ export enum DarumaBodyColor {
   EMPTY_DOTTED = 'empty_dotted',
 }
 
+//TODO
+//Podrían cambiarse los nombres de las skins
 export enum DarumaTopSkin {
   NOTHING = 'nothing',
-  SNOW_HAT = '0',
+  AUREOLA = '0',
+  BRUJO = '1',
+  CORONA = '2',
+  DIABLO = '3',
+  PARTY = '4',
+  GORRO = '5',
+  SANTA = '6',
+  OREJERAS = '7',
+  PAMELA = '8',
 }
 
 export enum DarumaBottomSkin {
   NOTHING = 'nothing',
-  REGAL_MOUSTACHE = '0',
+  BIGOTE = '0',
+  PIPA = '1',
 }
