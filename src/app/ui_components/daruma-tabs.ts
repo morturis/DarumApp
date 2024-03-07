@@ -50,7 +50,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
       space: { left: 10, right: 10, top: 50, bottom: 10, item: 10 },
     };
     this.tabs = new TabPages(this.scene, tabsConfig);
-    this.tabs.drawBounds(this.scene.add.graphics(), DarumaColors.HEX.WHITE);
+    //this.tabs.drawBounds(this.scene.add.graphics(), DarumaColors.HEX.WHITE); //for debugging
   }
 
   updateTabs(

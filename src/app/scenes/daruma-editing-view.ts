@@ -128,6 +128,9 @@ export class DarumaEditingView extends Phaser.Scene {
       this.renderedDaruma.getBounds().height,
     );
     this.saveButton = new DarumaTextButton(this, 0, 0, 'Save', () => {
+      const currentlySaving = this.registry.get(RegistryKeys.CURRENTLY_SAVING);
+      if (currentlySaving) return;
+      this.registry.set(RegistryKeys.CURRENTLY_SAVING, true);
       DarumaService.instance.save(this.model).subscribe((res) => {
         const shouldAllowSaving =
           this.ALLOWED_BODY_COLORS.includes(this.model.bodyColor) &&
@@ -141,7 +144,7 @@ export class DarumaEditingView extends Phaser.Scene {
           return;
         }
 
-        //TODO prompt requiring color, and text
+        this.registry.set(RegistryKeys.CURRENTLY_SAVING, null);
         //Upon saving, go to the previous scene
         const previousSceneKey = this.registry.get(
           RegistryKeys.PREVIOUS_SCENE,
@@ -189,10 +192,8 @@ export class DarumaEditingView extends Phaser.Scene {
   private setGoalText() {
     const textToSet =
       this.model.goals.length > 0 ? this.model.goals : '-no text yet-';
-    if (this.darumaText) {
-      this.darumaText.setText(textToSet);
-      return;
-    }
+    if (this.darumaText) this.darumaText.destroy();
+
     const yOffset = Math.min(
       this.CANVAS_HEIGHT * 0.2,
       this.renderedDaruma.getBounds().height,
