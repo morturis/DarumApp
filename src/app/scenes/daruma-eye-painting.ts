@@ -115,6 +115,7 @@ export class DarumaEyePainting extends Phaser.Scene {
 
   private deleteDaruma() {
     DarumaService.instance.delete(this.model).subscribe(() => {
+      //After deleting, go to previous screen
       const previousSceneKey = this.registry.get(
         RegistryKeys.PREVIOUS_SCENE,
       ) as SceneKeys;
