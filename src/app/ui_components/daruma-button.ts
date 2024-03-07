@@ -47,6 +47,7 @@ export class DarumaTextButton extends Phaser.GameObjects.Container {
       'daruma_buttons',
       'daruma_text_button.png',
     );
+    this.image.setScale(0.4);
     this.add(this.image);
 
     this.text = new Phaser.GameObjects.Text(scene, x, y, text, {

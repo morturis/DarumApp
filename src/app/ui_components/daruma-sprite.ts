@@ -61,6 +61,8 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
     this.add(this.leftEye);
     this.add(this.rightEye);
     this.add(this.bottomSkin);
+
+    this.setScale(0.35);
   }
 
   updateModel(model: DarumaModel) {

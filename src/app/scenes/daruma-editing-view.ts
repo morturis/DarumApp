@@ -270,8 +270,8 @@ export class DarumaEditingView extends Phaser.Scene {
     );
     this.add.existing(this.rightCarouselButton);
 
-    this.leftCarouselButton.setScale(0.3);
-    this.rightCarouselButton.setScale(0.3);
+    this.leftCarouselButton.setScale(0.15);
+    this.rightCarouselButton.setScale(0.15);
   }
 
   private addTopSkinCarousel() {
@@ -332,8 +332,8 @@ export class DarumaEditingView extends Phaser.Scene {
     );
     this.add.existing(this.rightTopSkinCarouselButton);
 
-    this.leftTopSkinCarouselButton.setScale(0.15);
-    this.rightTopSkinCarouselButton.setScale(0.15);
+    this.leftTopSkinCarouselButton.setScale(0.1);
+    this.rightTopSkinCarouselButton.setScale(0.1);
   }
 
   private addBottomSkinCarousel() {
@@ -394,7 +394,7 @@ export class DarumaEditingView extends Phaser.Scene {
     );
     this.add.existing(this.rightBottomSkinCarouselButton);
 
-    this.leftBottomSkinCarouselButton.setScale(0.15);
-    this.rightBottomSkinCarouselButton.setScale(0.15);
+    this.leftBottomSkinCarouselButton.setScale(0.1);
+    this.rightBottomSkinCarouselButton.setScale(0.1);
   }
 }

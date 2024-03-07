@@ -69,7 +69,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
         width: 2,
         height: 3,
         cellWidth: UNIT_WIDTH,
-        cellHeight: UNIT_HEIGHT,
+        cellHeight: UNIT_HEIGHT - 50,
         x: -UNIT_WIDTH / 2, //0 means the middle of the first unit
         y: -UNIT_HEIGHT, //0 means the middle of the first unit
       });

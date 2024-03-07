@@ -1,297 +1,486 @@
 {
   "frames": [
     {
-      "filename": "body_empty_full_line.png",
+      "filename": "BURNEDdaruma.png",
       "frame": {
         "x": 1,
         "y": 1,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
-      }
-    },
-    {
-      "filename": "daruma_belly.png",
-      "frame": {
-        "x": 247,
-        "y": 1,
-        "w": 244,
-        "h": 247
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 244,
-        "h": 247
-      },
-      "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_body_blue.png",
       "frame": {
-        "x": 493,
+        "x": 1083,
         "y": 1,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_body_empty_dotted.png",
+      "frame": {
+        "x": 2165,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_body_pink.png",
+      "frame": {
+        "x": 3247,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_body_red.png",
       "frame": {
         "x": 1,
-        "y": 250,
-        "w": 244,
-        "h": 247
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
-      "filename": "daruma_body_empty_dotted.png",
+      "filename": "daruma_body_yellow.png",
       "frame": {
-        "x": 247,
-        "y": 250,
-        "w": 244,
-        "h": 247
+        "x": 1083,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
-      }
-    },
-    {
-      "filename": "daruma_skin_bottom_nothing.png",
-      "frame": {
-        "x": 493,
-        "y": 250,
-        "w": 244,
-        "h": 247
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 244,
-        "h": 247
-      },
-      "sourceSize": {
-        "w": 244,
-        "h": 247
-      }
-    },
-    {
-      "filename": "daruma_face.png",
-      "frame": {
-        "x": 1,
-        "y": 499,
-        "w": 244,
-        "h": 247
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 244,
-        "h": 247
-      },
-      "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_left_eye_empty.png",
       "frame": {
-        "x": 247,
-        "y": 499,
-        "w": 244,
-        "h": 247
+        "x": 2165,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_left_eye_full.png",
       "frame": {
-        "x": 493,
-        "y": 499,
-        "w": 244,
-        "h": 247
+        "x": 3247,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_right_eye_empty.png",
       "frame": {
-        "x": 739,
-        "y": 1,
-        "w": 244,
-        "h": 247
+        "x": 1,
+        "y": 2165,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_right_eye_full.png",
       "frame": {
-        "x": 739,
-        "y": 250,
-        "w": 244,
-        "h": 247
+        "x": 1083,
+        "y": 2165,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_skin_bottom_0.png",
       "frame": {
-        "x": 739,
-        "y": 499,
-        "w": 244,
-        "h": 247
+        "x": 2165,
+        "y": 2165,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_bottom_1.png",
+      "frame": {
+        "x": 3247,
+        "y": 2165,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_bottom_nothing.png",
+      "frame": {
+        "x": 1,
+        "y": 3247,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_skin_top_0.png",
       "frame": {
-        "x": 1,
-        "y": 748,
-        "w": 244,
-        "h": 247
+        "x": 1083,
+        "y": 3247,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_1.png",
+      "frame": {
+        "x": 2165,
+        "y": 3247,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_2.png",
+      "frame": {
+        "x": 3247,
+        "y": 3247,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_3.png",
+      "frame": {
+        "x": 4329,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_4.png",
+      "frame": {
+        "x": 4329,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_5.png",
+      "frame": {
+        "x": 4329,
+        "y": 2165,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_6.png",
+      "frame": {
+        "x": 4329,
+        "y": 3247,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_7.png",
+      "frame": {
+        "x": 1,
+        "y": 4329,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_top_8.png",
+      "frame": {
+        "x": 1083,
+        "y": 4329,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
       }
     },
     {
       "filename": "daruma_skin_top_nothing.png",
       "frame": {
-        "x": 247,
-        "y": 748,
-        "w": 244,
-        "h": 247
+        "x": 2165,
+        "y": 4329,
+        "w": 1080,
+        "h": 1080
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       },
       "sourceSize": {
-        "w": 244,
-        "h": 247
+        "w": 1080,
+        "h": 1080
       }
     }
   ],
@@ -301,8 +490,8 @@
     "image": "spritesheet.png",
     "format": "RGBA8888",
     "size": {
-      "w": 984,
-      "h": 996
+      "w": 5410,
+      "h": 5410
     },
     "scale": "1"
   }
