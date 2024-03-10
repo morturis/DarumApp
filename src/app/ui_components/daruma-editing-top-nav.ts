@@ -26,8 +26,8 @@ export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
         const previousSceneKey = this.scene.registry.get(
           RegistryKeys.PREVIOUS_SCENE,
         ) as SceneKeys;
-        this.scene.scene.stop();
         this.scene.scene.wake(previousSceneKey);
+        this.scene.scene.stop();
       },
     ).setScale(0.1);
     this.logoImage = new Phaser.GameObjects.Image(

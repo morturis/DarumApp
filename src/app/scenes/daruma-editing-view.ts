@@ -58,7 +58,7 @@ export class DarumaEditingView extends Phaser.Scene {
     this.addSaveButton();
     this.addResetButton();
     this.addGoalButton();
-    this.setGoalText();
+    this.updateGoalTextDisplay();
     this.addCarousel();
     this.addTopSkinCarousel();
     this.addBottomSkinCarousel();
@@ -115,10 +115,12 @@ export class DarumaEditingView extends Phaser.Scene {
 
     //The first time I wake, I get the goal (this assumes this screen can only be awoken by DarumaGoalInput)
     this.events.on(Phaser.Scenes.Events.WAKE, () => {
-      this.model.goals = this.registry.get(RegistryKeys.EDITED_DARUMA_GOAL);
-      //Clear registry for the next time
-      this.registry.set(RegistryKeys.EDITED_DARUMA_GOAL, undefined);
-      this.setGoalText();
+
+      const receivedGoalText = this.registry.get(RegistryKeys.EDITED_DARUMA_GOAL);
+      if (receivedGoalText) {
+        this.model.goals = receivedGoalText;
+        this.updateGoalTextDisplay();
+      }
     });
   }
 
@@ -177,7 +179,7 @@ export class DarumaEditingView extends Phaser.Scene {
         topSkin: DarumaTopSkin.NOTHING,
         bottomSkin: DarumaBottomSkin.NOTHING,
       };
-      this.setGoalText();
+      this.updateGoalTextDisplay();
       this.renderedDaruma.updateModel(this.model);
     }).setScale(0.6);
     Phaser.Display.Align.In.Center(
@@ -189,9 +191,9 @@ export class DarumaEditingView extends Phaser.Scene {
     this.add.existing(this.resetButton);
   }
 
-  private setGoalText() {
+  private updateGoalTextDisplay() {
     const textToSet =
-      this.model.goals.length > 0 ? this.model.goals : '-no text yet-';
+      this.model.goals?.length ? this.model.goals : '-no text yet-';
     if (this.darumaText) this.darumaText.destroy();
 
     const yOffset = Math.min(
