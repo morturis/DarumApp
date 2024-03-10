@@ -115,8 +115,9 @@ export class DarumaEditingView extends Phaser.Scene {
 
     //The first time I wake, I get the goal (this assumes this screen can only be awoken by DarumaGoalInput)
     this.events.on(Phaser.Scenes.Events.WAKE, () => {
-
-      const receivedGoalText = this.registry.get(RegistryKeys.EDITED_DARUMA_GOAL);
+      const receivedGoalText = this.registry.get(
+        RegistryKeys.EDITED_DARUMA_GOAL,
+      );
       if (receivedGoalText) {
         this.model.goals = receivedGoalText;
         this.updateGoalTextDisplay();
@@ -192,8 +193,9 @@ export class DarumaEditingView extends Phaser.Scene {
   }
 
   private updateGoalTextDisplay() {
-    const textToSet =
-      this.model.goals?.length ? this.model.goals : '-no text yet-';
+    const textToSet = this.model.goals?.length
+      ? this.model.goals
+      : '-no text yet-';
     if (this.darumaText) this.darumaText.destroy();
 
     const yOffset = Math.min(
