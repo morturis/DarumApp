@@ -1,19 +1,11 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*",
-    "www/*",
-    "android/*"
-  ],
+  "ignorePatterns": ["projects/**/*", "www/*", "android/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
+        "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
@@ -24,10 +16,7 @@
         "@angular-eslint/component-class-suffix": [
           "error",
           {
-            "suffixes": [
-              "Page",
-              "Component"
-            ]
+            "suffixes": ["Page", "Component"]
           }
         ],
         "@angular-eslint/component-selector": [
@@ -49,12 +38,8 @@
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
   ]
