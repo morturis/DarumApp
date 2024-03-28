@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": ["projects/**/*", "www/*", "android/*"],
   "overrides": [
     {
       "files": ["*.ts"],
