@@ -1,4 +1,4 @@
-package com.darumapp;
+package com.darumApp;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -48,7 +48,7 @@ export class DarumaGoalInput extends Phaser.Scene {
     const textAreaX = this.CANVAS_WIDTH / 2;
     const textAreaY = this.CANVAS_HEIGHT * 0.4;
 
-    const rexUI = (this as Phaser.Scene & { rexUI?: UIPlugin }).rexUI;
+    const rexUI = (this as Phaser.Scene & { rexUI?: UIPlugin; }).rexUI;
     this.textAreaTitle = new Phaser.GameObjects.Text(
       this,
       0,
@@ -120,7 +120,7 @@ export class DarumaGoalInput extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_reset_button.png',
       () => {
         this.textArea.setText('');

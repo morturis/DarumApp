@@ -7,11 +7,12 @@ import { DarumaLibrary } from '../scenes/daruma-library';
 import { MainScene } from '../scenes/main-scene';
 import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
 import { DarumaGoalInput } from '../scenes/daruma-goal-input';
+import { DarumaColors } from '../model/daruma-colors';
 
 const MAX_WIDTH = 1920;
 const MAX_HEIGHT = 1080;
-const MIN_WIDTH = 1280;
-const MIN_HEIGHT = 720;
+const MIN_WIDTH = 240;
+const MIN_HEIGHT = 260;
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,7 @@ export class HomePage implements OnInit {
       type: Phaser.AUTO,
       height: window.innerHeight,
       width: window.innerWidth,
+      //backgroundColor: DarumaColors.HEX.PINK,
       scene: [
         MainScene,
         DarumaArchive,

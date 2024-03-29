@@ -1,7 +1,7 @@
 {
 	"frames": [
 		{
-			"filename": "daruma_body_blue.png",
+			"filename": "daruma_archive_button.png",
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"filename": "daruma_body_empty_dotted.png",
+			"filename": "daruma_archive_button_selected.png",
 			"frame": {
 				"x": 1083,
 				"y": 1,
@@ -43,7 +43,49 @@
 			}
 		},
 		{
-			"filename": "daruma_body_pink.png",
+			"filename": "daruma_create_button.png",
+			"frame": {
+				"x": 1,
+				"y": 1083,
+				"w": 1080,
+				"h": 1080
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1080,
+				"h": 1080
+			},
+			"sourceSize": {
+				"w": 1080,
+				"h": 1080
+			}
+		},
+		{
+			"filename": "daruma_create_button_selected.png",
+			"frame": {
+				"x": 1083,
+				"y": 1083,
+				"w": 1080,
+				"h": 1080
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1080,
+				"h": 1080
+			},
+			"sourceSize": {
+				"w": 1080,
+				"h": 1080
+			}
+		},
+		{
+			"filename": "daruma_library_button.png",
 			"frame": {
 				"x": 2165,
 				"y": 1,
@@ -64,115 +106,10 @@
 			}
 		},
 		{
-			"filename": "daruma_body_red.png",
-			"frame": {
-				"x": 1,
-				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_body_yellow.png",
-			"frame": {
-				"x": 1083,
-				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_left_eye_empty.png",
+			"filename": "daruma_library_button_selected.png",
 			"frame": {
 				"x": 2165,
 				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_left_eye_full.png",
-			"frame": {
-				"x": 1,
-				"y": 2165,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_right_eye_empty.png",
-			"frame": {
-				"x": 1083,
-				"y": 2165,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_right_eye_full.png",
-			"frame": {
-				"x": 2165,
-				"y": 2165,
 				"w": 1080,
 				"h": 1080
 			},
@@ -197,7 +134,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 3246,
-			"h": 3246
+			"h": 2164
 		},
 		"scale": "1"
 	}

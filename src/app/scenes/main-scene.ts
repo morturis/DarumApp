@@ -32,11 +32,26 @@ export class MainScene extends Phaser.Scene {
       'assets/spritesheets/daruma_sprite.png',
       'assets/spritesheets/daruma_sprite.json',
     );
+    this.load.atlas(
+      'daruma_skin_top',
+      'assets/spritesheets/daruma_skin_top.png',
+      'assets/spritesheets/daruma_skin_top.json',
+    );
+    this.load.atlas(
+      'daruma_skin_bottom',
+      'assets/spritesheets/daruma_skin_bottom.png',
+      'assets/spritesheets/daruma_skin_bottom.json',
+    );
     //Load button atlas
     this.load.atlas(
-      'daruma_buttons',
-      'assets/spritesheets/daruma_buttons.png',
-      'assets/spritesheets/daruma_buttons.json',
+      'daruma_action_buttons',
+      'assets/spritesheets/daruma_action_buttons.png',
+      'assets/spritesheets/daruma_action_buttons.json',
+    );
+    this.load.atlas(
+      'daruma_screen_buttons',
+      'assets/spritesheets/daruma_screen_buttons.png',
+      'assets/spritesheets/daruma_screen_buttons.json',
     );
   }
   override update() {
@@ -57,7 +72,7 @@ export class MainScene extends Phaser.Scene {
     );
     this.input.on(
       Phaser.Input.Events.POINTER_MOVE,
-      (pointer: { x: number; y: number }) => {
+      (pointer: { x: number; y: number; }) => {
         this.pointerGeom.setPosition(
           pointer.x - POINTER_WIDTH / 2,
           pointer.y - POINTER_HEIGHT / 2,

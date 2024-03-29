@@ -1,7 +1,7 @@
 {
 	"frames": [
 		{
-			"filename": "daruma_body_blue.png",
+			"filename": "daruma_skin_top_0.png",
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"filename": "daruma_body_empty_dotted.png",
+			"filename": "daruma_skin_top_1.png",
 			"frame": {
 				"x": 1083,
 				"y": 1,
@@ -43,7 +43,7 @@
 			}
 		},
 		{
-			"filename": "daruma_body_pink.png",
+			"filename": "daruma_skin_top_2.png",
 			"frame": {
 				"x": 2165,
 				"y": 1,
@@ -64,7 +64,7 @@
 			}
 		},
 		{
-			"filename": "daruma_body_red.png",
+			"filename": "daruma_skin_top_3.png",
 			"frame": {
 				"x": 1,
 				"y": 1083,
@@ -85,7 +85,7 @@
 			}
 		},
 		{
-			"filename": "daruma_body_yellow.png",
+			"filename": "daruma_skin_top_4.png",
 			"frame": {
 				"x": 1083,
 				"y": 1083,
@@ -106,7 +106,7 @@
 			}
 		},
 		{
-			"filename": "daruma_left_eye_empty.png",
+			"filename": "daruma_skin_top_5.png",
 			"frame": {
 				"x": 2165,
 				"y": 1083,
@@ -127,7 +127,7 @@
 			}
 		},
 		{
-			"filename": "daruma_left_eye_full.png",
+			"filename": "daruma_skin_top_6.png",
 			"frame": {
 				"x": 1,
 				"y": 2165,
@@ -148,7 +148,7 @@
 			}
 		},
 		{
-			"filename": "daruma_right_eye_empty.png",
+			"filename": "daruma_skin_top_7.png",
 			"frame": {
 				"x": 1083,
 				"y": 2165,
@@ -169,7 +169,7 @@
 			}
 		},
 		{
-			"filename": "daruma_right_eye_full.png",
+			"filename": "daruma_skin_top_nothing.png",
 			"frame": {
 				"x": 2165,
 				"y": 2165,
