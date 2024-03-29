@@ -1,141 +1,141 @@
 {
-	"frames": [
-		{
-			"filename": "daruma_back_button.png",
-			"frame": {
-				"x": 1,
-				"y": 1,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_delete_button.png",
-			"frame": {
-				"x": 1083,
-				"y": 1,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_left_carousel.png",
-			"frame": {
-				"x": 1,
-				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_reset_button.png",
-			"frame": {
-				"x": 1083,
-				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_right_carousel.png",
-			"frame": {
-				"x": 2165,
-				"y": 1,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_text_button.png",
-			"frame": {
-				"x": 2165,
-				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		}
-	],
-	"meta": {
-		"app": "http://www.codeandweb.com/texturepacker",
-		"version": "1.0",
-		"image": "spritesheet.png",
-		"format": "RGBA8888",
-		"size": {
-			"w": 3246,
-			"h": 2164
-		},
-		"scale": "1"
-	}
+  "frames": [
+    {
+      "filename": "daruma_back_button.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_delete_button.png",
+      "frame": {
+        "x": 1083,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_left_carousel.png",
+      "frame": {
+        "x": 1,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_reset_button.png",
+      "frame": {
+        "x": 1083,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_right_carousel.png",
+      "frame": {
+        "x": 2165,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_text_button.png",
+      "frame": {
+        "x": 2165,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "spritesheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 3246,
+      "h": 2164
+    },
+    "scale": "1"
+  }
 }

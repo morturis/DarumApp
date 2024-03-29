@@ -1,78 +1,78 @@
 {
-	"frames": [
-		{
-			"filename": "daruma_skin_bottom_0.png",
-			"frame": {
-				"x": 1,
-				"y": 1,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_skin_bottom_1.png",
-			"frame": {
-				"x": 1083,
-				"y": 1,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		},
-		{
-			"filename": "daruma_skin_bottom_nothing.png",
-			"frame": {
-				"x": 1,
-				"y": 1083,
-				"w": 1080,
-				"h": 1080
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 1080,
-				"h": 1080
-			},
-			"sourceSize": {
-				"w": 1080,
-				"h": 1080
-			}
-		}
-	],
-	"meta": {
-		"app": "http://www.codeandweb.com/texturepacker",
-		"version": "1.0",
-		"image": "spritesheet.png",
-		"format": "RGBA8888",
-		"size": {
-			"w": 2164,
-			"h": 2164
-		},
-		"scale": "1"
-	}
+  "frames": [
+    {
+      "filename": "daruma_skin_bottom_0.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_bottom_1.png",
+      "frame": {
+        "x": 1083,
+        "y": 1,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    },
+    {
+      "filename": "daruma_skin_bottom_nothing.png",
+      "frame": {
+        "x": 1,
+        "y": 1083,
+        "w": 1080,
+        "h": 1080
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1080
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1080
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "spritesheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2164,
+      "h": 2164
+    },
+    "scale": "1"
+  }
 }
