@@ -1,5 +1,7 @@
 {
   "name": "DarumApp",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

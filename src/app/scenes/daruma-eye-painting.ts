@@ -60,7 +60,7 @@ export class DarumaEyePainting extends Phaser.Scene {
         this,
         0,
         0,
-        'daruma_buttons',
+        'daruma_action_buttons',
         'daruma_delete_button.png',
         () => {
           const dialogConfirmPrompt = new DarumaConfirmDialog(

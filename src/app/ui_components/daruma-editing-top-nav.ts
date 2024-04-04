@@ -20,7 +20,7 @@ export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
       this.scene,
       -100,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_back_button.png',
       () => {
         const previousSceneKey = this.scene.registry.get(
@@ -34,14 +34,14 @@ export class DarumaEditingTopNav extends Phaser.GameObjects.Container {
       this.scene,
       0,
       0,
-      'daruma_buttons',
+      'daruma_screen_buttons',
       'daruma_create_button_selected.png',
     ).setScale(0.1);
     this.resetButton = new DarumaImageButton(
       this.scene,
       100,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_reset_button.png',
       () => {
         //TODO probably overkill to restart the whole scene

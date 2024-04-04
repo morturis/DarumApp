@@ -27,7 +27,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       this.scene,
       -this.buttonXOffset,
       0,
-      'daruma_buttons',
+      'daruma_screen_buttons',
       currentSceneKey === SceneKeys.DARUMA_EDITING
         ? 'daruma_create_button_selected.png'
         : 'daruma_create_button.png',
@@ -43,7 +43,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       this.scene,
       0,
       0,
-      'daruma_buttons',
+      'daruma_screen_buttons',
       currentSceneKey === SceneKeys.DARUMA_LIBRARY
         ? 'daruma_library_button_selected.png'
         : 'daruma_library_button.png',
@@ -56,7 +56,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
       this.scene,
       this.buttonXOffset,
       0,
-      'daruma_buttons',
+      'daruma_screen_buttons',
       currentSceneKey === SceneKeys.DARUMA_ARCHIVE
         ? 'daruma_archive_button_selected.png'
         : 'daruma_archive_button.png',
