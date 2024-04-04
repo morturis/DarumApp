@@ -9,6 +9,7 @@ export class DarumaList extends Phaser.Scene {
   modelDarumas: DarumaModel[] = [];
   renderedDarumas: DarumaSprite[] = [];
   private tabs!: DarumaTabs;
+  private topNavBar!: DarumaBaseTopNav;
 
   constructor(config: Phaser.Types.Scenes.SettingsConfig) {
     super({
@@ -18,11 +19,13 @@ export class DarumaList extends Phaser.Scene {
 
   create() {
     console.log('create started');
-    this.add.existing(new DarumaBaseTopNav(this));
+    this.topNavBar = new DarumaBaseTopNav(this);
+    const navBarHeight = this.topNavBar.getBounds().height;
+    this.add.existing(this.topNavBar);
     this.tabs = new DarumaTabs(
       this,
       this.sys.canvas.width / 2,
-      this.sys.canvas.height / 2,
+      this.sys.canvas.height / 2 + navBarHeight * 0.8,
     );
 
     this.updateRenderedDarumas();

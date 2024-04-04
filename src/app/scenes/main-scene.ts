@@ -18,7 +18,7 @@ export class MainScene extends Phaser.Scene {
     this.add.existing(topnav);
     //this.add.existing(new DarumaEditingUI(this));
 
-    this.addPointer();
+    //this.addDebugPointer();
 
     this.add.existing(new DarumaTabs(this, 0, 0));
   }
@@ -56,8 +56,8 @@ export class MainScene extends Phaser.Scene {
   }
   override update() {
     console.log('update method');
-    this.pointerGraphics.clear();
-    this.pointerGraphics.fillRectShape(this.pointerGeom);
+    this.pointerGraphics?.clear();
+    this.pointerGraphics?.fillRectShape(this.pointerGeom);
   }
 
   addPointer() {
