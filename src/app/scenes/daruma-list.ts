@@ -25,7 +25,7 @@ export class DarumaList extends Phaser.Scene {
     this.tabs = new DarumaTabs(
       this,
       this.sys.canvas.width / 2,
-      this.sys.canvas.height / 2 + navBarHeight * .8,
+      this.sys.canvas.height / 2 + navBarHeight * 0.8,
     );
 
     this.updateRenderedDarumas();

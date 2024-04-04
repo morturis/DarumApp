@@ -57,7 +57,7 @@ export class MainScene extends Phaser.Scene {
     );
     this.input.on(
       Phaser.Input.Events.POINTER_MOVE,
-      (pointer: { x: number; y: number; }) => {
+      (pointer: { x: number; y: number }) => {
         this.pointerGeom.setPosition(
           pointer.x - POINTER_WIDTH / 2,
           pointer.y - POINTER_HEIGHT / 2,
