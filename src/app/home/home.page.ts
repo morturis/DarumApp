@@ -7,6 +7,12 @@ import { DarumaLibrary } from '../scenes/daruma-library';
 import { MainScene } from '../scenes/main-scene';
 import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
 import { DarumaGoalInput } from '../scenes/daruma-goal-input';
+import { DarumaColors } from '../model/daruma-colors';
+
+const MAX_WIDTH = 1920;
+const MAX_HEIGHT = 1080;
+const MIN_WIDTH = 240;
+const MIN_HEIGHT = 260;
 
 @Component({
   selector: 'app-home',
@@ -17,11 +23,13 @@ import { DarumaGoalInput } from '../scenes/daruma-goal-input';
 export class HomePage implements OnInit {
   phaserGame!: Phaser.Game;
   config: Phaser.Types.Core.GameConfig;
+
   constructor(private darumaService: DarumaService) {
     this.config = {
       type: Phaser.AUTO,
       height: window.innerHeight,
       width: window.innerWidth,
+      //backgroundColor: DarumaColors.HEX.PINK,
       scene: [
         MainScene,
         DarumaArchive,
@@ -30,6 +38,18 @@ export class HomePage implements OnInit {
         DarumaEyePainting,
         DarumaGoalInput,
       ],
+      scale: {
+        mode: Phaser.Scale.FIT,
+        parent: 'gameContainer',
+        min: {
+          width: MIN_WIDTH,
+          height: MIN_HEIGHT,
+        },
+        max: {
+          width: MAX_WIDTH,
+          height: MAX_HEIGHT,
+        },
+      },
       parent: 'gameContainer',
       autoCenter: Phaser.Scale.CENTER_BOTH,
       physics: {

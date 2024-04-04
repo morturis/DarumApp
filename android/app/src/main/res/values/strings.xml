@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">DarumApp</string>
     <string name="title_activity_main">DarumApp</string>
-    <string name="package_name">com.darumapp</string>
-    <string name="custom_url_scheme">com.darumapp</string>
+    <string name="package_name">com.darumApp</string>
+    <string name="custom_url_scheme">com.darumApp</string>
 </resources>

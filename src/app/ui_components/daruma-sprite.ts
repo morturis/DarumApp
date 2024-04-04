@@ -45,13 +45,13 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       this.scene,
       0,
       0,
-      'daruma_sprite',
+      'daruma_skin_top',
     );
     this.bottomSkin = new Phaser.GameObjects.Image(
       this.scene,
       0,
       0,
-      'daruma_sprite',
+      'daruma_skin_bottom',
     );
 
     this.updateModel(model);

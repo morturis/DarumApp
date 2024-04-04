@@ -228,7 +228,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_left_carousel.png',
       () => {
         const indexOfCurrentColor = Math.max(
@@ -253,7 +253,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_right_carousel.png',
       () => {
         const indexOfCurrentColor = carouselColors.findIndex(
@@ -290,7 +290,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_left_carousel.png',
       () => {
         const indexOfCurrentColor = Math.max(
@@ -315,7 +315,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_right_carousel.png',
       () => {
         const indexOfCurrentSkin = carouselContents.findIndex(
@@ -352,7 +352,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_left_carousel.png',
       () => {
         const indexOfCurrentColor = Math.max(
@@ -377,7 +377,7 @@ export class DarumaEditingView extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_right_carousel.png',
       () => {
         const indexOfCurrentSkin = carouselContents.findIndex(

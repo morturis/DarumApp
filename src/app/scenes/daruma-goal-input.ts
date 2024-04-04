@@ -120,7 +120,7 @@ export class DarumaGoalInput extends Phaser.Scene {
       this,
       0,
       0,
-      'daruma_buttons',
+      'daruma_action_buttons',
       'daruma_reset_button.png',
       () => {
         this.textArea.setText('');
