@@ -21,7 +21,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
   }
 
   private createTabPages() {
-    const rectangle: RoundRectangle = new RoundRectangle(
+    const backgroundRectangle: RoundRectangle = new RoundRectangle(
       this.scene,
       0,
       0,
@@ -32,14 +32,14 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
       undefined,
       undefined,
     );
-    this.scene.add.existing(rectangle);
+    this.scene.add.existing(backgroundRectangle);
 
     const tabsConfig: TabPages.IConfig = {
       x: this.x,
       y: this.y,
       width: this.scene.sys.canvas.width,
-      height: this.scene.sys.canvas.height * 0.85,
-      background: rectangle,
+      height: this.scene.sys.canvas.height * 0.8,
+      background: backgroundRectangle,
       tabs: {
         space: { item: 3 },
       },
@@ -69,7 +69,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
         width: 2,
         height: 3,
         cellWidth: UNIT_WIDTH,
-        cellHeight: UNIT_HEIGHT - 50,
+        cellHeight: UNIT_HEIGHT * 0.75,
         x: -UNIT_WIDTH / 2, //0 means the middle of the first unit
         y: -UNIT_HEIGHT, //0 means the middle of the first unit
       });
