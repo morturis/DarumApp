@@ -173,9 +173,13 @@ export class DarumaService {
 
     const headers = {};
     return this.http
-      .post<BackendDarumaModel>(`${BASE_URL}/daruma`, this.parseFrontToBackDaruma(model), {
-        headers,
-      })
+      .post<BackendDarumaModel>(
+        `${BASE_URL}/daruma`,
+        this.parseFrontToBackDaruma(model),
+        {
+          headers,
+        },
+      )
       .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     // DarumaService.devValues.push(model);
@@ -184,9 +188,13 @@ export class DarumaService {
   update(model: DarumaModel): Observable<DarumaModel> {
     const headers = {};
     return this.http
-      .put<BackendDarumaModel>(`${BASE_URL}/daruma/${model.id}`, this.parseFrontToBackDaruma(model), {
-        headers,
-      })
+      .put<BackendDarumaModel>(
+        `${BASE_URL}/daruma/${model.id}`,
+        this.parseFrontToBackDaruma(model),
+        {
+          headers,
+        },
+      )
       .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     // const index = DarumaService.devValues.findIndex(
@@ -199,9 +207,10 @@ export class DarumaService {
 
   delete(model: DarumaModel): Observable<DarumaModel> {
     const headers = {};
-    return this.http.delete<BackendDarumaModel>(`${BASE_URL}/daruma/${model.id}`, {
-      headers,
-    })
+    return this.http
+      .delete<BackendDarumaModel>(`${BASE_URL}/daruma/${model.id}`, {
+        headers,
+      })
       .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
 
     //Keeps all except for the deleted element
@@ -217,7 +226,6 @@ export class DarumaService {
    * @returns
    */
   private parseSingleDaruma(response: BackendDarumaModel): DarumaModel {
-
     const colorMappings: Record<number, DarumaBodyColor> = {
       [1]: DarumaBodyColor.BLUE,
       [2]: DarumaBodyColor.RED,
@@ -257,7 +265,7 @@ export class DarumaService {
     const backendDaruma: BackendDarumaModel = {
       id: model.id || -1, //This should be ignored by the backend
       color: colorMappings[model.bodyColor],
-      objetivo: model.goals
+      objetivo: model.goals,
     };
     return backendDaruma;
   }
