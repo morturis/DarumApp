@@ -12,5 +12,6 @@ RUN npm run build --configuration app
 
 # deploy with nginx
 FROM nginx:1.25.5-alpine-slim
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=compile /app/dist/browser /usr/share/nginx/html
 EXPOSE 8080
