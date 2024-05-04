@@ -1,6 +1,7 @@
 # compile app
 FROM node:20.12-bookworm-slim as compile
 WORKDIR /app
+ENV HOST 0.0.0.0
 #When using COPY with more than one source file, the destination must be a directory and end with a /
 COPY ./package*.json ./
 RUN npm ci
