@@ -1,0 +1,10 @@
+node_modules
+android
+dist
+.git
+.vscode
+.husky
+Dockerfile
+.dockerignore
+.prettierrc
+.prettierignore
