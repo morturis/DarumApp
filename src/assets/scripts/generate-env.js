@@ -1,10 +1,10 @@
 const { writeFile, existsSync, mkdirSync } = require('fs');
 const { argv } = require('yargs');
 
-require('dotenv').config();
+require('dotenv').config(); 
 
-function writeFileUsingFS(targetPath: string, environmentFileContent: string) {
-  writeFile(targetPath, environmentFileContent, function (err: any) {
+function writeFileUsingFS(targetPath, environmentFileContent) {
+  writeFile(targetPath, environmentFileContent, function (err) {
     if (err) {
       console.log(err);
     }

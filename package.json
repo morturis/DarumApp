@@ -5,12 +5,12 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "npm run config  && ng serve",
-    "build": "npm run config -- --prod && ng build",
+    "start": "npm run config && ng serve",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky",
-    "config": "ts-node ./src/assets/scripts/generate-env.ts"
+    "config": "node ./src/assets/scripts/generate-env.js"
   },
   "private": true,
   "dependencies": {
