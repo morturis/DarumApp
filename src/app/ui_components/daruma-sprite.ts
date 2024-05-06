@@ -62,7 +62,7 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
     this.add(this.rightEye);
     this.add(this.bottomSkin);
 
-    this.setScale(0.35);
+    this.setScale(0.4);
   }
 
   updateModel(model: DarumaModel) {
@@ -100,9 +100,13 @@ export class DarumaSprite extends Phaser.GameObjects.Container {
       .on(Phaser.Input.Events.POINTER_UP, fun)
       .on(Phaser.Input.Events.POINTER_OVER, () => {
         this.darumaBody.setTint(DarumaColors.HEX.GRAY);
+        this.topSkin.setTint(DarumaColors.HEX.GRAY);
+        this.bottomSkin.setTint(DarumaColors.HEX.GRAY);
       })
       .on(Phaser.Input.Events.POINTER_OUT, () => {
         this.darumaBody.setTint();
+        this.topSkin.setTint();
+        this.bottomSkin.setTint();
       });
   }
 

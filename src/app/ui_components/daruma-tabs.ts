@@ -38,7 +38,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
       x: this.x,
       y: this.y,
       width: this.scene.sys.canvas.width,
-      height: this.scene.sys.canvas.height * 0.8,
+      height: this.scene.sys.canvas.height * 0.75,
       background: backgroundRectangle,
       tabs: {
         space: { item: 3 },
@@ -47,7 +47,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
         tabs: 'center',
       },
       tabsPosition: 'bottom',
-      space: { left: 10, right: 10, top: 50, bottom: 10, item: 10 },
+      space: { left: 10, right: 10, top: 100, bottom: 10, item: 10 },
     };
     this.tabs = new TabPages(this.scene, tabsConfig);
     //this.tabs.drawBounds(this.scene.add.graphics(), DarumaColors.HEX.WHITE); //for debugging
@@ -57,6 +57,7 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
     allContents: Phaser.GameObjects.Container[],
     numberPerPage: number,
   ) {
+    this.tabs.removeAllPages(true);
     const { width: UNIT_WIDTH, height: UNIT_HEIGHT } =
       allContents[0].getBounds();
 
@@ -69,9 +70,9 @@ export class DarumaTabs extends Phaser.GameObjects.Group {
         width: 2,
         height: 3,
         cellWidth: UNIT_WIDTH,
-        cellHeight: UNIT_HEIGHT * 0.75,
+        cellHeight: UNIT_HEIGHT,
         x: -UNIT_WIDTH / 2, //0 means the middle of the first unit
-        y: -UNIT_HEIGHT, //0 means the middle of the first unit
+        y: -UNIT_HEIGHT * 1.5, //0 means the middle of the first unit
       });
       this.scene.add.existing(containerForThisPage);
       const tabKey = `${i / 6 + 1}`;

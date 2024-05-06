@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Phaser from 'phaser';
 import { DarumaService } from '../external_interfaces/daruma.service';
 import { DarumaArchive } from '../scenes/daruma-archive';
-import { DarumaEditingView } from '../scenes/daruma-editing-view';
+import { DarumaCreationView } from '../scenes/daruma-creation-view';
 import { DarumaLibrary } from '../scenes/daruma-library';
 import { MainScene } from '../scenes/main-scene';
 import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
@@ -34,7 +34,7 @@ export class HomePage implements OnInit {
         MainScene,
         DarumaArchive,
         DarumaLibrary,
-        DarumaEditingView,
+        DarumaCreationView,
         DarumaEyePainting,
         DarumaGoalInput,
       ],

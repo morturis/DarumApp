@@ -10,14 +10,13 @@ import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
 import {
   DarumaImageButton,
-  DarumaTextButton,
 } from '../ui_components/daruma-button';
 import { DarumaEditingTopNav } from '../ui_components/daruma-editing-top-nav';
 import { DarumaSprite } from '../ui_components/daruma-sprite';
-import { TextAreaContainer } from '../ui_components/text-area-container';
+import { DarumaTextButton } from '../ui_components/daruma-text-button';
 import { addErrorPrompt, showDebugBounds } from '../utils';
 
-export class DarumaEditingView extends Phaser.Scene {
+export class DarumaCreationView extends Phaser.Scene {
   private model!: DarumaModel;
   private renderedDaruma!: DarumaSprite; //interactive
 
@@ -59,7 +58,7 @@ export class DarumaEditingView extends Phaser.Scene {
     this.addResetButton();
     this.addGoalButton();
     this.updateGoalTextDisplay();
-    this.addCarousel();
+    this.addBodyCarousel();
     this.addTopSkinCarousel();
     this.addBottomSkinCarousel();
   }
@@ -199,7 +198,7 @@ export class DarumaEditingView extends Phaser.Scene {
     if (this.darumaText) this.darumaText.destroy();
 
     const yOffset = Math.min(
-      this.CANVAS_HEIGHT * 0.2,
+      this.CANVAS_HEIGHT * 0.15,
       this.renderedDaruma.getBounds().height,
     );
     this.darumaText = new Phaser.GameObjects.Text(this, 0, 0, textToSet, {
@@ -216,14 +215,16 @@ export class DarumaEditingView extends Phaser.Scene {
     this.add.existing(this.darumaText);
   }
 
-  private addCarousel() {
+  private addBodyCarousel() {
     const carouselColors: DarumaBodyColor[] = Object.values(
       DarumaBodyColor,
     ).filter((color) => color !== DarumaBodyColor.EMPTY_DOTTED);
 
-    const renderedDarumaWidth = this.renderedDaruma.getBounds().width;
-    const separationFromRenderedDaruma =
+    const { width: renderedDarumaWidth, height: renderedDarumaHeight } =
+      this.renderedDaruma.getBounds();
+    const xSeparationFromRenderedDaruma =
       renderedDarumaWidth / 2 + renderedDarumaWidth * 0.1;
+    const ySeparationFromRenderedDaruma = renderedDarumaHeight * 0;
     this.leftCarouselButton = new DarumaImageButton(
       this,
       0,
@@ -244,8 +245,8 @@ export class DarumaEditingView extends Phaser.Scene {
     Phaser.Display.Align.In.Center(
       this.leftCarouselButton,
       this.renderedDaruma,
-      -separationFromRenderedDaruma,
-      0,
+      -xSeparationFromRenderedDaruma,
+      ySeparationFromRenderedDaruma,
     );
     this.add.existing(this.leftCarouselButton);
 
@@ -269,13 +270,13 @@ export class DarumaEditingView extends Phaser.Scene {
     Phaser.Display.Align.In.Center(
       this.rightCarouselButton,
       this.renderedDaruma,
-      separationFromRenderedDaruma,
-      0,
+      xSeparationFromRenderedDaruma,
+      ySeparationFromRenderedDaruma,
     );
     this.add.existing(this.rightCarouselButton);
 
-    this.leftCarouselButton.setScale(0.15);
-    this.rightCarouselButton.setScale(0.15);
+    this.leftCarouselButton.setScale(0.11);
+    this.rightCarouselButton.setScale(0.11);
   }
 
   private addTopSkinCarousel() {
@@ -285,7 +286,7 @@ export class DarumaEditingView extends Phaser.Scene {
     const xSeparationFromRenderedDaruma =
       renderedDarumaWidth / 2 + renderedDarumaWidth * 0.075;
     const ySeparationFromRenderedDaruma =
-      renderedDarumaHeight / 2 - renderedDarumaHeight * 0.2;
+      renderedDarumaHeight / 2 - renderedDarumaHeight * 0.25;
     this.leftTopSkinCarouselButton = new DarumaImageButton(
       this,
       0,
@@ -336,8 +337,8 @@ export class DarumaEditingView extends Phaser.Scene {
     );
     this.add.existing(this.rightTopSkinCarouselButton);
 
-    this.leftTopSkinCarouselButton.setScale(0.1);
-    this.rightTopSkinCarouselButton.setScale(0.1);
+    this.leftTopSkinCarouselButton.setScale(0.07);
+    this.rightTopSkinCarouselButton.setScale(0.07);
   }
 
   private addBottomSkinCarousel() {
@@ -347,7 +348,7 @@ export class DarumaEditingView extends Phaser.Scene {
     const xSeparationFromRenderedDaruma =
       renderedDarumaWidth / 2 + renderedDarumaWidth * 0.075;
     const ySeparationFromRenderedDaruma =
-      renderedDarumaHeight / 2 - renderedDarumaHeight * 0.2;
+      renderedDarumaHeight / 2 - renderedDarumaHeight * 0.25;
     this.leftBottomSkinCarouselButton = new DarumaImageButton(
       this,
       0,
@@ -398,7 +399,7 @@ export class DarumaEditingView extends Phaser.Scene {
     );
     this.add.existing(this.rightBottomSkinCarouselButton);
 
-    this.leftBottomSkinCarouselButton.setScale(0.1);
-    this.rightBottomSkinCarouselButton.setScale(0.1);
+    this.leftBottomSkinCarouselButton.setScale(0.07);
+    this.rightBottomSkinCarouselButton.setScale(0.07);
   }
 }

@@ -7,7 +7,6 @@ export class DarumaLibrary extends DarumaList {
     super({ key: SceneKeys.DARUMA_LIBRARY });
   }
   override loadDarumas() {
-    this.modelDarumas = [];
 
     //This call will keep going even after the scene has been created
     //Could be made async by using the asyncLoader plugin

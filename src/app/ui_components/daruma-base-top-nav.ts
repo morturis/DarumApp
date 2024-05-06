@@ -1,7 +1,7 @@
 import { Scene } from 'phaser';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
-import { DarumaImageButton, DarumaTextButton } from './daruma-button';
+import { DarumaImageButton } from './daruma-button';
 
 export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
   private createButton!: DarumaImageButton;
@@ -38,7 +38,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
         );
         this.scene.scene.switch(SceneKeys.DARUMA_EDITING);
       },
-    ).setScale(0.1);
+    ).setScale(0.15);
     this.libraryButton = new DarumaImageButton(
       this.scene,
       0,
@@ -51,7 +51,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_LIBRARY);
       },
-    ).setScale(0.1);
+    ).setScale(0.15);
     this.archiveButton = new DarumaImageButton(
       this.scene,
       this.buttonXOffset,
@@ -64,7 +64,7 @@ export class DarumaBaseTopNav extends Phaser.GameObjects.Container {
         this.scene.scene.stop();
         this.scene.scene.start(SceneKeys.DARUMA_ARCHIVE);
       },
-    ).setScale(0.1);
+    ).setScale(0.15);
 
     this.add([this.createButton, this.libraryButton, this.archiveButton]);
   }
