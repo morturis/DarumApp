@@ -2,14 +2,12 @@ import UIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin';
 import { DarumaColors } from '../model/daruma-colors';
 import { RegistryKeys } from '../model/registry-keys';
 import { SceneKeys } from '../model/scene-keys';
-import { DarumaBaseTopNav } from '../ui_components/daruma-base-top-nav';
 import {
   DarumaImageButton,
-  DarumaTextButton,
 } from '../ui_components/daruma-button';
 import { DarumaEditingTopNav } from '../ui_components/daruma-editing-top-nav';
-import { TextAreaContainer } from '../ui_components/text-area-container';
 import { TextAreaInput } from 'phaser3-rex-plugins/templates/ui/ui-components.js';
+import { DarumaTextButton } from '../ui_components/daruma-text-button';
 
 export class DarumaGoalInput extends Phaser.Scene {
   private textAreaTitle!: Phaser.GameObjects.Text;
@@ -48,7 +46,7 @@ export class DarumaGoalInput extends Phaser.Scene {
     const textAreaX = this.CANVAS_WIDTH / 2;
     const textAreaY = this.CANVAS_HEIGHT * 0.4;
 
-    const rexUI = (this as Phaser.Scene & { rexUI?: UIPlugin }).rexUI;
+    const rexUI = (this as Phaser.Scene & { rexUI?: UIPlugin; }).rexUI;
     this.textAreaTitle = new Phaser.GameObjects.Text(
       this,
       0,

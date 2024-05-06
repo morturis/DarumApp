@@ -25,19 +25,24 @@ export enum DarumaBodyColor {
 //Podrían cambiarse los nombres de las skins
 export enum DarumaTopSkin {
   NOTHING = 'nothing',
-  AUREOLA = '0',
-  BRUJO = '1',
-  CORONA = '2',
-  DIABLO = '3',
-  PARTY = '4',
-  GORRO = '5',
-  SANTA = '6',
-  OREJERAS = '7',
-  PAMELA = '8',
+  MARBLE = '0',
+  GOKU = '1',
+  DEADPOOL = '2',
+  GRASS = '3',
+  WOLVERINE = '4',
+  BUZZ = '5',
+  CASCOROSA = '6',
+  GOLDEN = '7',
+  CORAZONES = '8',
+  POWERPUFF_1 = '9',
+  POWERPUFF_2 = '10',
+  POWERPUFF_3 = '11',
 }
 
 export enum DarumaBottomSkin {
   NOTHING = 'nothing',
-  BIGOTE = '0',
-  PIPA = '1',
+  LOVE = '0',
+  MONEY = '1',
+  HEALTH = '2',
+  LUCK = '3',
 }

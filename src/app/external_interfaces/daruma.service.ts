@@ -238,8 +238,8 @@ export class DarumaService {
       rightEye: false,
       bodyColor: colorMappings[response.color],
       goals: response.objetivo,
-      topSkin: DarumaTopSkin.AUREOLA,
-      bottomSkin: DarumaBottomSkin.BIGOTE,
+      topSkin: DarumaTopSkin.NOTHING,
+      bottomSkin: DarumaBottomSkin.NOTHING,
       id: response.id,
     };
     return parsedDaruma;

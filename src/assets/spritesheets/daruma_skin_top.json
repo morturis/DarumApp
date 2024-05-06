@@ -1,204 +1,288 @@
 {
-  "frames": [
-    {
-      "filename": "daruma_skin_top_0.png",
-      "frame": {
-        "x": 1,
-        "y": 1,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_1.png",
-      "frame": {
-        "x": 1083,
-        "y": 1,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_2.png",
-      "frame": {
-        "x": 2165,
-        "y": 1,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_3.png",
-      "frame": {
-        "x": 1,
-        "y": 1083,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_4.png",
-      "frame": {
-        "x": 1083,
-        "y": 1083,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_5.png",
-      "frame": {
-        "x": 2165,
-        "y": 1083,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_6.png",
-      "frame": {
-        "x": 1,
-        "y": 2165,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_7.png",
-      "frame": {
-        "x": 1083,
-        "y": 2165,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    },
-    {
-      "filename": "daruma_skin_top_nothing.png",
-      "frame": {
-        "x": 2165,
-        "y": 2165,
-        "w": 1080,
-        "h": 1080
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 1080,
-        "h": 1080
-      },
-      "sourceSize": {
-        "w": 1080,
-        "h": 1080
-      }
-    }
-  ],
-  "meta": {
-    "app": "http://www.codeandweb.com/texturepacker",
-    "version": "1.0",
-    "image": "spritesheet.png",
-    "format": "RGBA8888",
-    "size": {
-      "w": 3246,
-      "h": 3246
-    },
-    "scale": "1"
-  }
+	"frames": [
+		{
+			"filename": "daruma_skin_top_0.png",
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_1.png",
+			"frame": {
+				"x": 515,
+				"y": 1,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_10.png",
+			"frame": {
+				"x": 1029,
+				"y": 1,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_11.png",
+			"frame": {
+				"x": 1,
+				"y": 515,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_2.png",
+			"frame": {
+				"x": 515,
+				"y": 515,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_3.png",
+			"frame": {
+				"x": 1029,
+				"y": 515,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_4.png",
+			"frame": {
+				"x": 1,
+				"y": 1029,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_5.png",
+			"frame": {
+				"x": 515,
+				"y": 1029,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_6.png",
+			"frame": {
+				"x": 1029,
+				"y": 1029,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_7.png",
+			"frame": {
+				"x": 1543,
+				"y": 1,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_8.png",
+			"frame": {
+				"x": 1543,
+				"y": 515,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_9.png",
+			"frame": {
+				"x": 1543,
+				"y": 1029,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		},
+		{
+			"filename": "daruma_skin_top_nothing.png",
+			"frame": {
+				"x": 1,
+				"y": 1543,
+				"w": 512,
+				"h": 512
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 512,
+				"h": 512
+			},
+			"sourceSize": {
+				"w": 512,
+				"h": 512
+			}
+		}
+	],
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 2056,
+			"h": 2056
+		},
+		"scale": "1"
+	}
 }
