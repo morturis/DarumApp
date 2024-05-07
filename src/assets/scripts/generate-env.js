@@ -34,7 +34,6 @@ const targetPath = isProduction
   ? './src/environments/environment.prod.ts'
   : './src/environments/environment.ts';
 
-console.log(process.env);
 if (!process.env['API_URL']) throw new Error('API_URL is missing');
 if (!process.env['FIREBASE_API_KEY'])
   throw new Error('FIREBASE_API_KEY is missing');
