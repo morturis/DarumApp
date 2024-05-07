@@ -7,8 +7,7 @@ COPY ./package*.json ./
 RUN npm ci
 COPY . ./
 
-# this is equivalent to 'ionic build --prod'
-RUN npm run build --configuration app 
+RUN npm run build --prod
 
 # deploy with nginx
 FROM nginx:1.25.5-alpine-slim

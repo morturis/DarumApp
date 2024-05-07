@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import Phaser from 'phaser';
-import { DarumaService } from '../external_interfaces/daruma.service';
 import { DarumaArchive } from '../scenes/daruma-archive';
 import { DarumaCreationView } from '../scenes/daruma-creation-view';
-import { DarumaLibrary } from '../scenes/daruma-library';
-import { MainScene } from '../scenes/main-scene';
 import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
 import { DarumaGoalInput } from '../scenes/daruma-goal-input';
-import { DarumaColors } from '../model/daruma-colors';
+import { DarumaLibrary } from '../scenes/daruma-library';
+import { MainScene } from '../scenes/main-scene';
 
 const MAX_WIDTH = 1920;
 const MAX_HEIGHT = 1080;
@@ -24,7 +22,7 @@ export class HomePage implements OnInit {
   phaserGame!: Phaser.Game;
   config: Phaser.Types.Core.GameConfig;
 
-  constructor(private darumaService: DarumaService) {
+  constructor() {
     this.config = {
       type: Phaser.AUTO,
       height: window.innerHeight,
