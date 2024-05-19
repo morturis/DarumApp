@@ -24,10 +24,12 @@ type BackendDarumaModel = {
  * Connects to external backend
  */
 export class DarumaService {
+  // Must be static so Phaser screens can use it. Accidentally, singleton
   static instance: DarumaService;
 
   constructor(private http: HttpClient) {
-    DarumaService.instance = this;
+    if (!DarumaService.instance) DarumaService.instance = this;
+    return DarumaService.instance;
   }
 
   get(id: number): Observable<DarumaModel> {

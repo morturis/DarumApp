@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Phaser from 'phaser';
+import { DarumaService } from '../external_interfaces/daruma.service';
 import { DarumaArchive } from '../scenes/daruma-archive';
 import { DarumaCreationView } from '../scenes/daruma-creation-view';
 import { DarumaEyePainting } from '../scenes/daruma-eye-painting';
@@ -22,7 +23,8 @@ export class HomePage implements OnInit {
   phaserGame!: Phaser.Game;
   config: Phaser.Types.Core.GameConfig;
 
-  constructor() {
+  //This service must be injected here so angular initializes it and it can be accesed from other screens
+  constructor(private darumaService: DarumaService) {
     this.config = {
       type: Phaser.AUTO,
       height: window.innerHeight,
