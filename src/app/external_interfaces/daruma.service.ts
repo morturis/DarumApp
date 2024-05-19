@@ -33,7 +33,7 @@ export class DarumaService {
   }
 
   get(id: number): Observable<DarumaModel> {
-    const headers = {};
+    const headers = this.defaultHeaders();
     return this.http
       .get<BackendDarumaModel>(`${BASE_URL}/daruma/${id}`, {
         headers,
@@ -42,7 +42,7 @@ export class DarumaService {
   }
 
   getList(userId: number): Observable<DarumaModel[]> {
-    const headers = {};
+    const headers = this.defaultHeaders();
     //TODO change url when Backend allows filtering by user
     return this.http
       .get<BackendDarumaModel[]>(`${BASE_URL}/daruma`, {
@@ -54,7 +54,7 @@ export class DarumaService {
   save(model: DarumaModel): Observable<DarumaModel> {
     if (model.id) return this.update(model);
 
-    const headers = {};
+    const headers = this.defaultHeaders();
     return this.http
       .post<BackendDarumaModel>(
         `${BASE_URL}/daruma`,
@@ -66,7 +66,7 @@ export class DarumaService {
       .pipe(mergeMap((response) => of(this.parseSingleDaruma(response))));
   }
   update(model: DarumaModel): Observable<DarumaModel> {
-    const headers = {};
+    const headers = this.defaultHeaders();
     return this.http
       .put<BackendDarumaModel>(
         `${BASE_URL}/daruma/${model.id}`,
@@ -79,7 +79,7 @@ export class DarumaService {
   }
 
   delete(model: DarumaModel): Observable<DarumaModel> {
-    const headers = {};
+    const headers = this.defaultHeaders();
     return this.http
       .delete<BackendDarumaModel>(`${BASE_URL}/daruma/${model.id}`, {
         headers,
@@ -135,5 +135,9 @@ export class DarumaService {
       objetivo: model.goals,
     };
     return backendDaruma;
+  }
+
+  private defaultHeaders() {
+    return { Authorization: `Bearer ${localStorage.getItem('accessToken')}` };
   }
 }
