@@ -22,9 +22,10 @@ if (!existsSync(envDirectory)) {
   mkdirSync(envDirectory);
 }
 
+const defaultEnvironment = "export const environment = {}"
 //creates the `environment.prod.ts` and `environment.ts` file if it does not exist
-writeFileUsingFS('./src/environments/environment.prod.ts', '');
-writeFileUsingFS('./src/environments/environment.ts', '');
+writeFileUsingFS('./src/environments/environment.prod.ts', defaultEnvironment);
+writeFileUsingFS('./src/environments/environment.ts', defaultEnvironment);
 
 // Checks whether command line argument of `prod` was provided signifying production mode
 const isProduction = !!argv.prod;
@@ -37,6 +38,7 @@ const targetPath = isProduction
 if (!process.env['API_URL']) throw new Error('API_URL is missing');
 if (!process.env['FIREBASE_API_KEY'])
   throw new Error('FIREBASE_API_KEY is missing');
+console.log("API URL is "+process.env['API_URL']);
 
 //actual content to be compiled dynamically and pasted into respective environment files
 const environmentFileContent = `
@@ -56,4 +58,5 @@ const environmentFileContent = `
   };
 `;
 
+writeFileUsingFS(targetPath, '');
 writeFileUsingFS(targetPath, environmentFileContent); // appending data into the target file
