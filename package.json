@@ -6,12 +6,11 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run config && ng serve",
-    "build": "npm run config-prod && ng build",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky",
-    "config": "node ./src/assets/scripts/generate-env.js",
-    "config-prod": "node ./src/assets/scripts/generate-env.js --prod"
+    "config": "node ./src/assets/scripts/generate-env.js"
   },
   "private": true,
   "dependencies": {
