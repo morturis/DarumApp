@@ -11,13 +11,12 @@ const routes: Routes = [
     canActivate: [() => inject(AuthGuard).canActivate('/login')],
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 
